@@ -28,7 +28,20 @@ To add *AdmitadSDK* itself please follow these steps:
 
 ### Installation via CocoaPods
 
-to be written...
+If you have CocoaPods installed (installation process is described [here](https://guides.cocoapods.org/using/getting-started.html)) do the following:
+1. `cd` to the directory where your project is located.
+2. run `pod init` in Terminal. A *Podfile* will be created.
+3. Modify the *Podfile* to look like this:
+```ruby
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target>' do
+pod 'AdmitadSDK'
+end
+```
+4. Run `pod install`. A *.xcworkspace* will be created.
+5. Close your project (if opened) and open the *.xcworkspace*.
 
 ## Objective-C interoperability
 
