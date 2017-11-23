@@ -19,8 +19,8 @@ The link below contains fully descriptive manual on Alamofire installation proce
 
 To add *AdmitadSDK* itself please follow these steps: 
 1. Clone this repository or download zip-file.
-2. Locate *DeeplinkSDKTest.xcworkspace* and open it in Xcode.
-3. Select *AdmitadSDK* target. Build the project.
+2. Locate *AdmitadSDK.xcworkspace* in *AdmitadSDK* directory and open it in Xcode.
+3. Build the project.
 4. In *Project navigator* locate *AdmitadSDK* project and unfold it if necessary. Go to *Products* folder, where you can find *AdmitadSDK.framework*. Right-click on it and select *Show in Finder*.
 5. Drag *AdmitadSDK.framework* to your project's directory.
 6. In your Xcode project go to *Project->Target->General->Embedded Binaries* and add *AdmitadSDK* by clicking on the "plus" button.
@@ -42,6 +42,10 @@ end
 ```
 4. Run `pod install`. A *.xcworkspace* will be created.
 5. Close your project (if opened) and open the *.xcworkspace*.
+
+## Alamofire version
+
+*AdmitadSDK* uses version 4.x of *Alamofire* as a dependency. So if you use *Alamofire* in your project, it's major release number should be 4. You're free to specify any minor release number for your needs.
 
 ## Objective-C interoperability
 
