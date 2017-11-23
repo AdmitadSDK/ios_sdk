@@ -31,7 +31,7 @@ To add *AdmitadSDK* itself please follow these steps:
 6. In your Xcode project go to *Project->Target->General->Embedded Binaries* and add *AdmitadSDK* by clicking on the "plus" button.
 
 ![Press Plus Button](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Press%20Plus%20Button.png)
-![Add Other](https://raw.githubusercontent.com/AdmitadSDK/ReadmeTest/master/images/Add%20Other.png)
+![Add Other](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Add%20Other.png)
 ![Choose Framework](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Choose%20Framework.png)
 
 7. In *Project->Target->Build Settings->Framework Search Paths* add `$(PROJECT_DIR)`. You can place *AdmitadSDK* to another directory, but be sure that the directory is present in the *Framework Search Paths* list.
