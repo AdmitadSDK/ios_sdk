@@ -17,14 +17,26 @@ To add *AdmitadSDK* to your project you have two options:
 The link below contains fully descriptive manual on Alamofire installation process:
 [Alamofire GitHub Page](https://github.com/Alamofire/Alamofire)
 
-To add *AdmitadSDK* itself please follow these steps: 
+To add *AdmitadSDK* itself please follow these steps:
 1. Clone this repository or download zip-file.
 2. Locate *AdmitadSDK.xcworkspace* in *AdmitadSDK* directory and open it in Xcode.
+3. `cd` to this directory.
+4. Run `pod install` in Terminal. More on CocoaPods in next section.
 3. Build the project.
 4. In *Project navigator* locate *AdmitadSDK* project and unfold it if necessary. Go to *Products* folder, where you can find *AdmitadSDK.framework*. Right-click on it and select *Show in Finder*.
+
+![Locating Build Product](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Build%20Product.png)
+
 5. Drag *AdmitadSDK.framework* to your project's directory.
 6. In your Xcode project go to *Project->Target->General->Embedded Binaries* and add *AdmitadSDK* by clicking on the "plus" button.
+
+![Press Plus Button](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Press%20Plus%20Button.png)
+![Add Other](https://raw.githubusercontent.com/AdmitadSDK/ReadmeTest/master/images/Add%20Other.png)
+![Choose Framework](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Choose%20Framework.png)
+
 7. In *Project->Target->Build Settings->Framework Search Paths* add `$(PROJECT_DIR)`. You can place *AdmitadSDK* to another directory, but be sure that the directory is present in the *Framework Search Paths* list.
+
+![Press Plus Button](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Search%20Paths.png)
 
 ### Installation via CocoaPods
 
