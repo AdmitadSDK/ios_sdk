@@ -9,6 +9,7 @@
 import Foundation
 import CoreTelephony
 import CoreLocation
+import UIKit
 
 internal struct AdmitadFingerprint: Codable {
     let hardwareId: String

@@ -19,24 +19,13 @@ The link below contains fully descriptive manual on Alamofire installation proce
 
 To add *AdmitadSDK* itself please follow these steps:
 1. Clone this repository or download zip-file.
-2. Locate *AdmitadSDK.xcworkspace* in *AdmitadSDK* directory and open it in Xcode.
-3. `cd` to this directory.
-4. Run `pod install` in Terminal. More on CocoaPods in next section.
-3. Build the project.
-4. In *Project navigator* locate *AdmitadSDK* project and unfold it if necessary. Go to *Products* folder, where you can find *AdmitadSDK.framework*. Right-click on it and select *Show in Finder*.
-
-![Locating Build Product](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Build%20Product.png)
-
-5. Drag *AdmitadSDK.framework* to your project's directory.
-6. In your Xcode project go to *Project->Target->General->Embedded Binaries* and add *AdmitadSDK* by clicking on the "plus" button.
-
-![Press Plus Button](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Press%20Plus%20Button.png)
-![Add Other](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Add%20Other.png)
-![Choose Framework](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Choose%20Framework.png)
-
-7. In *Project->Target->Build Settings->Framework Search Paths* add `$(PROJECT_DIR)`. You can place *AdmitadSDK* to another directory, but be sure that the directory is present in the *Framework Search Paths* list.
-
-![Press Plus Button](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Search%20Paths.png)
+2. Locate *RepoName/AdmitadSDK/AdmitadSDK* folder. This folder should contain two subfolders:  *Internal* and *Public*.
+![Locating AdmitadSDK Directory](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Directory.png)
+3. Copy and paste the *AdmitadSDK* folder to some directory inside your project's directory.
+4. Drag and drop the *AdmitadSDK* folder to Project Navigator in Xcode. Make sure that your target is checked in prompt.
+![Drag and Drop](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Drag.png)
+![Checking Target](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Target.png)
+5. Build the project.
 
 ### Installation via CocoaPods
 
@@ -54,6 +43,7 @@ end
 ```
 4. Run `pod install`. A *.xcworkspace* will be created.
 5. Close your project (if opened) and open the *.xcworkspace*.
+6. If you've run into some issues installing *AdmitadSDK* via CocoaPods, try running `pod update` in Terminal.
 
 ## Alamofire version
 
