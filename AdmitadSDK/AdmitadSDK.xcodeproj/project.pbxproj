@@ -66,7 +66,6 @@
 		6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequestStorage.swift; sourceTree = "<group>"; };
 		6CF922C01F7CD3DB00D0A155 /* AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF922C31F7CD3DB00D0A155 /* AdmitadSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdmitadSDK.h; sourceTree = "<group>"; };
-		6CF922C41F7CD3DB00D0A155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CF922D11F7CD46F00D0A155 /* AdmitadTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTracker.swift; sourceTree = "<group>"; };
 		8C7445717D76B85A0DE19F29 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
 		EA90C085519D46A486A41DF9 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "../AdmitadSDK/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 			children = (
 				6C5773241F82709D00B44A9B /* Public */,
 				6C5773251F8270B100B44A9B /* Internal */,
-				6CF922C41F7CD3DB00D0A155 /* Info.plist */,
 			);
 			path = AdmitadSDK;
 			sourceTree = "<group>";

@@ -58,15 +58,154 @@ Just add `@import AdmitadSDK;` import statement to the source files that make us
 
 1. In `application(_:didFinishLaunchingWithOptions:)` method assign *AdmitadTracker* singleton's `postbackKey` property to your Admitad Postback Key.
 2. In the same method call *AdmitadTracker*'s `trackAppLaunch()`, `trackReturnedEvent()` и `trackLoyaltyEvent()`.
+Swift:
+```Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+admitadTracker.postbackKey = postbackKey
+
+admitadTracker.trackAppLaunch()
+admitadTracker.trackReturnedEvent()
+admitadTracker.trackLoyaltyEvent()
+
+return true
+}
+```
+Objective-C:
+```Objective-C
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+admitadTracker = [AdmitadTracker sharedInstance];
+
+admitadTracker.postbackKey = @"123";
+
+[admitadTracker trackAppLaunch];
+[admitadTracker trackReturnedEventWithUserId:nil completion:nil];
+[admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
+
+return YES;
+}
+
+```
+
 3. To track Universal Links usage, in `application(_:continue:restorationHandler:)` call corresondingly named `continueUserActivity` method and pass `userActivity` to it as parameter.
+Swift:
+```Swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+admitadTracker.continueUserActivity(userActivity)
+return true
+}
+```
+Objective-C:
+```Objective-C
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+
+[admitadTracker continueUserActivity:userActivity];
+return YES;
+```
 4. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
+Swift:
+```Swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+admitadTracker.openUrl(url)
+return true
+}
+```
+Objective-C:
+```Objective-C
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+
+[tracker openUrl:url];
+return YES;
+}
+```
 
 ## Event Tracking
 
 If you have setup your *AppDelegate* right, *Installed* event is triggered automatically, *Returned* and *Loyalty* event are triggered when `trackReturnedEvent()` and `trackLoyaltyEvent()` respectively are called. To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
+Swift:
+```Swift
+let items = [AdmitadOrderItem(name: "Phone"), AdmitadOrderItem(name: "Phone Charger", quantity: 3)]
+
+let order = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo)
+
+admitadTracker.trackConfirmedPurchaseEvent(order: order)
+// or
+admitadTracker.trackPaidOrderEvent(order: order)
+```
+Objective-C:
+```Objective-C
+AdmitadOrderItem *item1 = [[AdmitadOrderItem alloc] initWithName:@"Phone"
+quantity:1];
+AdmitadOrderItem *item2 = [[AdmitadOrderItem alloc] initWithName:@"Phone Charger"
+quantity:3];
+
+NSArray<AdmitadOrderItem *> *items = @[item1, item2];
+
+AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo];
+
+[admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
+// or
+[admitadTracker trackPaidOrderEventWithOrder:order completion:nil];
+```
 
 Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
+Swift:
+```Swift
+// somewhere in your code
+admitadTracker.userId = userId
+
+// then
+admitadTracker.trackRegisterEvent()
+```
+or
+```Swift
+admitadTracker.trackRegisterEvent(userId: userId)
+```
+Objective-C:
+```Objective-C
+// somewhere in your code
+admitadTracker.userId = userId
+
+// then
+[admitadTracker trackRegisterEventWithUserId:nil completion:nil];
+```
+or
+```Objective-C
+[admitadTracker tratrackRegisterEventWithUserId: userId completion:nil];
+```
 
 ## Delegation and Callbacks
 
 When working with *AdmitadSDK* from Swift environment you are provided with two mechanisms of notification on event tracking success or failure. Every event triggering method takes a completion callback. In the callback you can check if an error has occurred. *AdmitadTracker* instance also notifies its *delegate* object conforming to *AdmitadDelegate* protocol. Both ways of notification are independent from each other and can be used simultaneously and interchangeably. In Objective-C environment only the former mechanism is available.
+Swift:
+```Swift
+class YourClass: AdmitadDelegate {
+    func someFunc() {
+        AdmitadTracker.sharedInstance.delegate = self
+    }
+
+    func startedTrackingAdmitadEvent(_ event: AdmitadEvent) {
+        // code on start tracking
+    }
+
+    func finishedTrackingAdmitadEvent(_ event: AdmitadEvent?, error: AdmitadError?) {
+        // code on finished tracking
+        // you can check if error is nil here
+    }
+}
+```
+or
+```Swift
+trackRegisterEvent() { error in
+    // code on finished tracking
+    // you can check if error is nil here
+}
+```
+Objective-C:
+```
+[admitadTracker trackRegisterEventWithUserId:nil completion:^(AdmitadError *error) {
+    // code on finished tracking
+    // you can check if error is nil here 
+}];
+```
