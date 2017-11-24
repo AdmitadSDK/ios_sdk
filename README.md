@@ -77,7 +77,7 @@ Objective-C:
 
 admitadTracker = [AdmitadTracker sharedInstance];
 
-admitadTracker.postbackKey = @"123";
+admitadTracker.postbackKey = postbackKey;
 
 [admitadTracker trackAppLaunch];
 [admitadTracker trackReturnedEventWithUserId:nil completion:nil];
@@ -102,6 +102,7 @@ Objective-C:
 
 [admitadTracker continueUserActivity:userActivity];
 return YES;
+}
 ```
 4. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
 Swift:
@@ -206,6 +207,6 @@ Objective-C:
 ```
 [admitadTracker trackRegisterEventWithUserId:nil completion:^(AdmitadError *error) {
     // code on finished tracking
-    // you can check if error is nil here 
+    // you can check if error is nil here
 }];
 ```
