@@ -173,7 +173,7 @@ admitadTracker.userId = userId
 ```
 or
 ```Objective-C
-[admitadTracker tratrackRegisterEventWithUserId: userId completion:nil];
+[admitadTracker trackRegisterEventWithUserId: userId completion:nil];
 ```
 
 ## Delegation and Callbacks
