@@ -6,6 +6,7 @@ iOS integration SDK of https://www.admitad.com/
 Make sure that your project's deployment target is iOS 9.0 or higher.
 
 Your project should be set up to make interaction with URL Schemes and Universal Links possible.
+**Note**: you also should test on a real device because deeplinking doesn't work on simulator and therefore most of *AdmitadSDK* functionality won't be available.
 
 To add *AdmitadSDK* to your project you have two options:
 1. Manual Installation
