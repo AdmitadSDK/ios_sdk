@@ -4,7 +4,7 @@ iOS integration SDK of https://www.admitad.com/
 ## Table of contents
 
 
-* [Setting your project](#example-app)
+* [Setting your project](#setting_your_project)
 * [Manual Installation](#manual_installation)
 * [Installation via CocoaPods](#manual_installation)
 * [Alamofire version](#installation_via_cocoapods)
