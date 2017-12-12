@@ -1,7 +1,21 @@
 # ios_sdk
 iOS integration SDK of https://www.admitad.com/
 
-## Setting your project
+## Table of contents
+
+
+* [Setting your project](#example-app)
+* [Manual Installation](#manual_installation)
+* [Installation via CocoaPods](#manual_installation)
+* [Alamofire version](#installation_via_cocoapods)
+* [Objective-C interoperability](#alamofire_version)
+* [Setting AppDelegate](#objective_c_interoperability)
+* [Event Tracking](#setting_app_delegate)
+* [Delegation and Callbacks](#event_tracking)
+* [License](#license)
+
+
+## <a id="setting_your_project"></a>Setting your project
 
 Make sure that your project's deployment target is iOS 9.0 or higher.
 
@@ -12,7 +26,7 @@ To add *AdmitadSDK* to your project you have two options:
 1. Manual Installation
 2. Installation via CocoaPods
 
-### Manual Installation
+### <a id="manual_installation"></a>Manual Installation
 
 *AdmitadSDK* makes use of *Alamofire* framework. In order to use AdmitadSDK please add Alamofire to your project.
 The link below contains fully descriptive manual on Alamofire installation process:
@@ -28,7 +42,7 @@ To add *AdmitadSDK* itself please follow these steps:
 ![Checking Target](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Target.png)
 5. Build the project.
 
-### Installation via CocoaPods
+### <a id="installation_via_cocoapods"></a>Installation via CocoaPods
 
 If you have CocoaPods installed (installation process is described [here](https://guides.cocoapods.org/using/getting-started.html)) do the following:
 1. `cd` to the directory where your project is located.
@@ -46,18 +60,19 @@ end
 5. Close your project (if opened) and open the *.xcworkspace*.
 6. If you've run into some issues installing *AdmitadSDK* via CocoaPods, try running `pod update` in Terminal.
 
-## Alamofire version
+## <a id="alamofire_version"></a>Alamofire version
 
 *AdmitadSDK* uses version 4.x of *Alamofire* as a dependency. So if you use *Alamofire* in your project, it's major release number should be 4. You're free to specify any minor release number for your needs.
 
-## Objective-C interoperability
+## <a id="objective_c_interoperability"></a>Objective-C interoperability
 
 Just add `@import AdmitadSDK;` import statement to the source files that make use of *AdmitadSDK*.
 
-## Setting AppDelegate
+## <a id="setting_app_delegate"></a>Setting AppDelegate
 
 1. In `application(_:didFinishLaunchingWithOptions:)` method assign *AdmitadTracker* singleton's `postbackKey` property to your Admitad Postback Key.
 2. In the same method call *AdmitadTracker*'s `trackAppLaunch()`, `trackReturnedEvent()` и `trackLoyaltyEvent()`.
+
 Swift:
 ```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -89,6 +104,7 @@ return YES;
 ```
 
 3. To track Universal Links usage, in `application(_:continue:restorationHandler:)` call corresondingly named `continueUserActivity` method and pass `userActivity` to it as parameter.
+
 Swift:
 ```Swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -105,6 +121,7 @@ return YES;
 }
 ```
 4. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
+
 Swift:
 ```Swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -121,9 +138,10 @@ return YES;
 }
 ```
 
-## Event Tracking
+## <a id="event_tracking"></a>Event Tracking
 
 If you have setup your *AppDelegate* right, *Installed* event is triggered automatically, *Returned* and *Loyalty* event are triggered when `trackReturnedEvent()` and `trackLoyaltyEvent()` respectively are called. To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
+
 Swift:
 ```Swift
 let items = [AdmitadOrderItem(name: "Phone"), AdmitadOrderItem(name: "Phone Charger", quantity: 3)]
@@ -151,6 +169,7 @@ AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price curre
 ```
 
 Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
+
 Swift:
 ```Swift
 // somewhere in your code
@@ -176,9 +195,10 @@ or
 [admitadTracker trackRegisterEventWithUserId: userId completion:nil];
 ```
 
-## Delegation and Callbacks
+## <a id="delegation_and_callbacks"></a>Delegation and Callbacks
 
 When working with *AdmitadSDK* from Swift environment you are provided with two mechanisms of notification on event tracking success or failure. Every event triggering method takes a completion callback. In the callback you can check if an error has occurred. *AdmitadTracker* instance also notifies its *delegate* object conforming to *AdmitadDelegate* protocol. Both ways of notification are independent from each other and can be used simultaneously and interchangeably. In Objective-C environment only the former mechanism is available.
+
 Swift:
 ```Swift
 class YourClass: AdmitadDelegate {
@@ -210,3 +230,15 @@ Objective-C:
     // you can check if error is nil here
 }];
 ```
+
+## <a id="license"></a>License
+
+The admitad SDK is licensed under the MIT License.
+
+Copyright (c) 2017 Admitad GmbH
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
