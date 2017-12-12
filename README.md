@@ -7,7 +7,7 @@ iOS integration SDK of https://www.admitad.com/
 * [Setting your project](#setting_your_project)
 * [Manual Installation](#manual_installation)
 * [Installation via CocoaPods](#installation_via_cocoapods)
-* [Alamofire version](#event_tracking)
+* [Alamofire version](#alamofire_version)
 * [Objective-C interoperability](#objective_c_interoperability)
 * [Setting AppDelegate](#setting_app_delegate)
 * [Event Tracking](#event_tracking)
