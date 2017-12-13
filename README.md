@@ -88,7 +88,7 @@ let admitadTracker = AdmitadTracker.sharedInstance
 ```
 Objective-C:
 ```Objective-C
-AdmitadTracker *admitadTracker = [AdmitadTracker sharedInstance];
+AdmitadTracker *admitadTracker;
 ```
 
 
@@ -114,7 +114,7 @@ Objective-C:
 
 admitadTracker = [AdmitadTracker sharedInstance];
 
-admitadTracker.postbackKey = postbackKey;
+admitadTracker.postbackKey = @"postbackKey";
 
 [admitadTracker trackAppLaunch];
 [admitadTracker trackReturnedEventWithUserId:nil completion:nil];
