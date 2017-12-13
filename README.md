@@ -78,15 +78,28 @@ end
 Just add `@import AdmitadSDK;` import statement to the source files that make use of *AdmitadSDK*.
 
 ## <a id="setting_app_delegate"></a>Setting AppDelegate
+1. Get a Singleton AdmitadTracker Instance
 
-1. In `application(_:didFinishLaunchingWithOptions:)` method assign *AdmitadTracker* singleton's `postbackKey` property to your Admitad Postback Key.
-2. In the same method call *AdmitadTracker*'s `trackAppLaunch()`, `trackReturnedEvent()` и `trackLoyaltyEvent()`.
+All sdk methods require an instance of the main AdmitadTracker object. Here's how you can get one. It's stored statically and is accessible from any class.
+
+Swift:
+```Swift
+let admitadTracker = AdmitadTracker.sharedInstance
+```
+Objective-C:
+```Objective-C
+AdmitadTracker *admitadTracker = [AdmitadTracker sharedInstance];
+```
+
+
+2. In `application(_:didFinishLaunchingWithOptions:)` method assign *AdmitadTracker* singleton's `postbackKey` property to your Admitad Postback Key.
+3. In the same method call *AdmitadTracker*'s `trackAppLaunch()`, `trackReturnedEvent()` и `trackLoyaltyEvent()`.
 
 Swift:
 ```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-admitadTracker.postbackKey = postbackKey
+admitadTracker.postbackKey = "postbackKey"
 
 admitadTracker.trackAppLaunch()
 admitadTracker.trackReturnedEvent()
@@ -112,7 +125,7 @@ return YES;
 
 ```
 
-3. To track Universal Links usage, in `application(_:continue:restorationHandler:)` call corresondingly named `continueUserActivity` method and pass `userActivity` to it as parameter.
+4. To track Universal Links usage, in `application(_:continue:restorationHandler:)` call corresondingly named `continueUserActivity` method and pass `userActivity` to it as parameter.
 
 Swift:
 ```Swift
@@ -129,7 +142,7 @@ Objective-C:
 return YES;
 }
 ```
-4. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
+5. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
 
 Swift:
 ```Swift
@@ -310,4 +323,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
