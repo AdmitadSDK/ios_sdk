@@ -1,4 +1,4 @@
-# ios_sdk
+# Admitad SDK for iOS
 iOS integration SDK of https://www.admitad.com/
 
 ## Table of contents
@@ -11,6 +11,15 @@ iOS integration SDK of https://www.admitad.com/
 * [Objective-C interoperability](#objective_c_interoperability)
 * [Setting AppDelegate](#setting_app_delegate)
 * [Event Tracking](#event_tracking)
+    * [Event Tracking](#event_tracking)
+    * [User Id](#user_id)
+    * [Register](#register)
+    * [Returned](#returned)
+    * [Loyalty](#loyalty)
+    * [Order](#order)
+      * [Admitad Order](#admitad_order)
+      * [Confirmed Purchase](#confirmed_purchase)
+      * [Paid Order](#paid_order)
 * [Delegation and Callbacks](#delegation_and_callbacks)
 * [License](#license)
 
@@ -140,17 +149,89 @@ return YES;
 
 ## <a id="event_tracking"></a>Event Tracking
 
-If you have setup your *AppDelegate* right, *Installed* event is triggered automatically, *Returned* and *Loyalty* event are triggered when `trackReturnedEvent()` and `trackLoyaltyEvent()` respectively are called. To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
+If you have setup your *AppDelegate* right, *Installed* event is triggered automatically, 
+
+Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
+
+####<a id="user_id"> User Id
+Swift:
+```Swift
+// somewhere in your code
+admitadTracker.userId = userId
+```
+
+Objective-C:
+```Objective-C
+// somewhere in your code
+admitadTracker.userId = userId
+```
+####<a id="register"> Register
+ *Register* event are triggered when:
+
+Swift:
+```Swift
+admitadTracker.trackRegisterEvent()
+```
+or
+```Swift
+admitadTracker.trackRegisterEvent(userId: userId)
+```
+Objective-C:
+```Objective-C
+[admitadTracker trackRegisterEventWithUserId:nil completion:nil];
+```
+or
+```Objective-C
+[admitadTracker trackRegisterEventWithUserId: userId completion:nil];
+```
+####<a id="returned"> Returned
+ *Returned* event are triggered when:
+
+Swift:
+```Swift
+admitadTracker.trackReturnedEvent()
+```
+or
+```Swift
+admitadTracker.trackReturnedEvent(userId: userId)
+```
+Objective-C:
+```Objective-C
+[admitadTracker trackReturnedEventWithUserId:nil completion:nil];
+```
+or
+```Objective-C
+[admitadTracker trackReturnedEventWithUserId: userId completion:nil];
+```
+####<a id="loyalty"> Loyalty
+ *Loyalty* event are triggered when: 
+
+Swift:
+```Swift
+admitadTracker.trackLoyaltyEvent()
+```
+or
+```Swift
+admitadTracker.trackLoyaltyEvent(userId: userId)
+```
+Objective-C:
+```Objective-C
+[admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
+```
+or
+```Objective-C
+[admitadTracker trackLoyaltyEventWithUserId: userId completion:nil];
+```
+###<a id="order"> Order
+
+####<a id="admitad_order"> Admitad Order
+To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
 
 Swift:
 ```Swift
 let items = [AdmitadOrderItem(name: "Phone"), AdmitadOrderItem(name: "Phone Charger", quantity: 3)]
 
 let order = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo)
-
-admitadTracker.trackConfirmedPurchaseEvent(order: order)
-// or
-admitadTracker.trackPaidOrderEvent(order: order)
 ```
 Objective-C:
 ```Objective-C
@@ -162,37 +243,24 @@ quantity:3];
 NSArray<AdmitadOrderItem *> *items = @[item1, item2];
 
 AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo];
-
-[admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
-// or
-[admitadTracker trackPaidOrderEventWithOrder:order completion:nil];
 ```
-
-Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
-
+####<a id="confirmed_purchase"> Confirmed Purchase
 Swift:
 ```Swift
-// somewhere in your code
-admitadTracker.userId = userId
-
-// then
-admitadTracker.trackRegisterEvent()
-```
-or
-```Swift
-admitadTracker.trackRegisterEvent(userId: userId)
+admitadTracker.trackConfirmedPurchaseEvent(order: order)
 ```
 Objective-C:
 ```Objective-C
-// somewhere in your code
-admitadTracker.userId = userId
-
-// then
-[admitadTracker trackRegisterEventWithUserId:nil completion:nil];
+[admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
 ```
-or
+####<a id="paid_order"> Paid Order
+Swift:
+```Swift
+admitadTracker.trackPaidOrderEvent(order: order)
+```
+Objective-C:
 ```Objective-C
-[admitadTracker trackRegisterEventWithUserId: userId completion:nil];
+[admitadTracker trackPaidOrderEventWithOrder:order completion:nil];
 ```
 
 ## <a id="delegation_and_callbacks"></a>Delegation and Callbacks
@@ -242,3 +310,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
