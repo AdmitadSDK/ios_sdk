@@ -153,7 +153,7 @@ If you have setup your *AppDelegate* right, *Installed* event is triggered autom
 
 Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
 
-####<a id="user_id"> User Id
+#### <a id="user_id"> User Id
 Swift:
 ```Swift
 // somewhere in your code
@@ -165,7 +165,7 @@ Objective-C:
 // somewhere in your code
 admitadTracker.userId = userId
 ```
-####<a id="register"> Register
+#### <a id="register"> Register
  *Register* event are triggered when:
 
 Swift:
@@ -184,7 +184,7 @@ or
 ```Objective-C
 [admitadTracker trackRegisterEventWithUserId: userId completion:nil];
 ```
-####<a id="returned"> Returned
+#### <a id="returned"> Returned
  *Returned* event are triggered when:
 
 Swift:
@@ -203,7 +203,7 @@ or
 ```Objective-C
 [admitadTracker trackReturnedEventWithUserId: userId completion:nil];
 ```
-####<a id="loyalty"> Loyalty
+#### <a id="loyalty"> Loyalty
  *Loyalty* event are triggered when: 
 
 Swift:
@@ -222,9 +222,9 @@ or
 ```Objective-C
 [admitadTracker trackLoyaltyEventWithUserId: userId completion:nil];
 ```
-###<a id="order"> Order
+### <a id="order"> Order
 
-####<a id="admitad_order"> Admitad Order
+#### <a id="admitad_order"> Admitad Order
 To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
 
 Swift:
@@ -244,7 +244,7 @@ NSArray<AdmitadOrderItem *> *items = @[item1, item2];
 
 AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo];
 ```
-####<a id="confirmed_purchase"> Confirmed Purchase
+#### <a id="confirmed_purchase"> Confirmed Purchase
 Swift:
 ```Swift
 admitadTracker.trackConfirmedPurchaseEvent(order: order)
@@ -253,7 +253,7 @@ Objective-C:
 ```Objective-C
 [admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
 ```
-####<a id="paid_order"> Paid Order
+#### <a id="paid_order"> Paid Order
 Swift:
 ```Swift
 admitadTracker.trackPaidOrderEvent(order: order)
