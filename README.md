@@ -11,7 +11,6 @@ iOS integration SDK of https://www.admitad.com/
 * [Objective-C interoperability](#objective_c_interoperability)
 * [Setting AppDelegate](#setting_app_delegate)
 * [Event Tracking](#event_tracking)
-    * [Event Tracking](#event_tracking)
     * [User Id](#user_id)
     * [Register](#register)
     * [Returned](#returned)
