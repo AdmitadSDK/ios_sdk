@@ -68,6 +68,9 @@ internal extension AdmitadOrder {
         guard let json = AdmitadJsonParameter(url: url) else {
             return nil
         }
+        guard let tarifCode = url[AdmitadParameter.tarifcode.rawValue] else {
+            return nil
+        }
 
         let items = json.items
         let userInfo = json.userInfo
@@ -76,7 +79,8 @@ internal extension AdmitadOrder {
                   totalPrice: price,
                   currencyCode: currencyCode,
                   items: items,
-                  userInfo: userInfo)
+                  userInfo: userInfo,
+                  tarifCode: tarifCode)
     }
 }
 
