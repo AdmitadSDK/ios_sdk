@@ -20,4 +20,5 @@ internal enum AdmitadParameter: String {
     case day = "day"
     case device = "device"
     case fingerprint = "fingerprint"
+    case tarifcode = "tc"
 }
