@@ -33,17 +33,24 @@ public class AdmitadOrder: NSObject {
      Corresponds to json parameter of Admitad API.
      */
     @objc public let userInfo: [String: String]?
-
+    
+    /**
+     Tarif code to set price alterations depending on item or order type.
+    */
+    @objc public let tarifCode: String?
+    
     @objc public init(id: String,
                 totalPrice: String,
                 currencyCode: String,
                 items: [AdmitadOrderItem],
-                userInfo: [String: String]? = nil) {
+                userInfo: [String: String]? = nil,
+                tarifCode: String? = nil) {
         self.id = id
         self.totalPrice = totalPrice
         self.currencyCode = currencyCode
         self.items = items
         self.userInfo = userInfo
+        self.tarifCode = tarifCode
     }
 }
 
