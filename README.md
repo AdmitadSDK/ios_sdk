@@ -237,7 +237,7 @@ or
 ### <a id="order"> Order
 
 #### <a id="admitad_order"> Admitad Order
-To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively.
+To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively. 
 
 Swift:
 ```Swift
@@ -255,6 +255,17 @@ quantity:3];
 NSArray<AdmitadOrderItem *> *items = @[item1, item2];
 
 AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo];
+```
+You can initialize *AdmitadOrder* with extra parameter *tarifCode*. Then Admitad can apply this tariff to the order as defined in your agreement.
+To get tariff codes ask your Admitad account manager.
+
+Swift:
+```Swift
+let orderWithTarif = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo, tarifCode: "itemCategory1")
+```
+Objective-C:
+```Objective-C
+AdmitadOrder *orderWithTarif = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo tarifCode:tarifCode];
 ```
 #### <a id="confirmed_purchase"> Confirmed Purchase
 Swift:
