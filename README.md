@@ -6,22 +6,22 @@ Admitad help center: https://help.admitad.com/en/advertiser/topic/195-mobile-sdk
 ## Table of contents
 
 
-* [Setting your project](#setting_your_project)
-* [Manual Installation](#manual_installation)
-* [Installation via CocoaPods](#installation_via_cocoapods)
-* [Alamofire version](#alamofire_version)
-* [Objective-C interoperability](#objective_c_interoperability)
-* [Setting AppDelegate](#setting_app_delegate)
-* [Event Tracking](#event_tracking)
-    * [User Id](#user_id)
+* [Setting your project](#setting-your-project)
+* [Manual Installation](#manual-installation)
+* [Installation via CocoaPods](#installation-via-cocoapods)
+* [Alamofire version](#alamofire-version)
+* [Objective-C interoperability](#objective-c-interoperability)
+* [Setting AppDelegate](#setting-app-delegate)
+* [Event Tracking](#event-tracking)
+    * [User Id](#user-id)
     * [Register](#register)
     * [Returned](#returned)
     * [Loyalty](#loyalty)
     * [Order](#order)
-      * [Admitad Order](#admitad_order)
-      * [Confirmed Purchase](#confirmed_purchase)
-      * [Paid Order](#paid_order)
-* [Delegation and Callbacks](#delegation_and_callbacks)
+      * [Additional parameters](#additional-parameters)
+      * [Confirmed Purchase](#confirmed-purchase)
+      * [Paid Order](#paid-order)
+* [Delegation and Callbacks](#delegation-and-callbacks)
 * [License](#license)
 
 
@@ -36,7 +36,7 @@ To add *AdmitadSDK* to your project you have two options:
 1. Manual Installation
 2. Installation via CocoaPods
 
-### <a id="manual_installation"></a>Manual Installation
+### <a id="manual-installation"></a>Manual Installation
 
 *AdmitadSDK* makes use of *Alamofire* framework. In order to use AdmitadSDK please add Alamofire to your project.
 The link below contains fully descriptive manual on Alamofire installation process:
@@ -52,7 +52,7 @@ To add *AdmitadSDK* itself please follow these steps:
 ![Checking Target](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Target.png)
 5. Build the project.
 
-### <a id="installation_via_cocoapods"></a>Installation via CocoaPods
+### <a id="installation-via-cocoapods"></a>Installation via CocoaPods
 
 If you have CocoaPods installed (installation process is described [here](https://guides.cocoapods.org/using/getting-started.html)) do the following:
 1. `cd` to the directory where your project is located.
@@ -70,15 +70,15 @@ end
 5. Close your project (if opened) and open the *.xcworkspace*.
 6. If you've run into some issues installing *AdmitadSDK* via CocoaPods, try running `pod update` in Terminal.
 
-## <a id="alamofire_version"></a>Alamofire version
+## <a id="alamofire-version"></a>Alamofire version
 
 *AdmitadSDK* uses version 4.x of *Alamofire* as a dependency. So if you use *Alamofire* in your project, it's major release number should be 4. You're free to specify any minor release number for your needs.
 
-## <a id="objective_c_interoperability"></a>Objective-C interoperability
+## <a id="objective-c-interoperability"></a>Objective-C interoperability
 
 Just add `@import AdmitadSDK;` import statement to the source files that make use of *AdmitadSDK*.
 
-## <a id="setting_app_delegate"></a>Setting AppDelegate
+## <a id="setting-app-delegate"></a>Setting AppDelegate
 1. Get a Singleton AdmitadTracker Instance
 
 All sdk methods require an instance of the main AdmitadTracker object. Here's how you can get one. It's stored statically and is accessible from any class.
@@ -161,13 +161,13 @@ return YES;
 }
 ```
 
-## <a id="event_tracking"></a>Event Tracking
+## <a id="event-tracking"></a>Event Tracking
 
 If you have setup your *AppDelegate* right, *Installed* event is triggered automatically, 
 
 Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
 
-#### <a id="user_id"> User Id
+#### <a id="user-id">User Id
 Swift:
 ```Swift
 // somewhere in your code
@@ -179,7 +179,7 @@ Objective-C:
 // somewhere in your code
 admitadTracker.userId = userId
 ```
-#### <a id="register"> Register
+#### <a id="register">Register
  *Register* event are triggered when:
 
 Swift:
@@ -198,7 +198,7 @@ or
 ```Objective-C
 [admitadTracker trackRegisterEventWithUserId: userId completion:nil];
 ```
-#### <a id="returned"> Returned
+#### <a id="returned">Returned
  *Returned* event are triggered when:
 
 Swift:
@@ -217,7 +217,7 @@ or
 ```Objective-C
 [admitadTracker trackReturnedEventWithUserId: userId completion:nil];
 ```
-#### <a id="loyalty"> Loyalty
+#### <a id="loyalty">Loyalty
  *Loyalty* event are triggered when: 
 
 Swift:
@@ -236,9 +236,7 @@ or
 ```Objective-C
 [admitadTracker trackLoyaltyEventWithUserId: userId completion:nil];
 ```
-### <a id="order"> Order
-
-#### <a id="admitad_order"> Admitad Order
+#### <a id="order">Order
 To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively. 
 
 Swift:
@@ -258,6 +256,12 @@ NSArray<AdmitadOrderItem *> *items = @[item1, item2];
 
 AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo];
 ```
+
+##### <a id="additional-parameters"></a>Additional parameters
+
+  * You can customize your order using any combination of additional parameters.  
+  
+###### _<a id="tarifCode">tarifCode_
 You can initialize *AdmitadOrder* with extra parameter *tarifCode*. Then Admitad can apply this tariff to the order as defined in your agreement.
 To get tariff codes ask your Admitad account manager.
 
@@ -270,6 +274,7 @@ Objective-C:
 AdmitadOrder *orderWithTarif = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo tarifCode:tarifCode];
 ```
 
+###### _<a id="promoCode">promocode_
 You can initialize *AdmitadOrder* with extra parameter *promocode*. Then Admitad will show promocode for this order in statistics report of your campaign.
 
 Swift:
@@ -280,7 +285,23 @@ Objective-C:
 ```Objective-C
 AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo promocode:promocode];
 ```
-#### <a id="confirmed_purchase"> Confirmed Purchase
+
+###### _<a id="channel">channel_
+  You can initialize AdmitadOrder with extra parameter *channel*. It is used for order deduplication.  
+  If you intend to attribute this order to Admitad then set channel to `AdmitadOrder.ADM_MOBILE_CHANNEL`.  
+  If you intend to attribute this order to other affiliate network then set channel value to its name.  
+  If you intend to attribute this order to any network then set channel to `AdmitadOrder.UNKNOWN_CHANNEL`.  
+
+Swift:
+```Swift
+let orderWithPromocode = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo, channel: AdmitadOrder.ADM_MOBILE_CHANNEL)
+```
+Objective-C:
+```Objective-C
+AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo channel:channel];
+```
+
+#### <a id="confirmed-purchase">Confirmed Purchase
 Swift:
 ```Swift
 admitadTracker.trackConfirmedPurchaseEvent(order: order)
@@ -289,7 +310,7 @@ Objective-C:
 ```Objective-C
 [admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
 ```
-#### <a id="paid_order"> Paid Order
+#### <a id="paid-order">Paid Order
 Swift:
 ```Swift
 admitadTracker.trackPaidOrderEvent(order: order)
@@ -299,7 +320,7 @@ Objective-C:
 [admitadTracker trackPaidOrderEventWithOrder:order completion:nil];
 ```
 
-## <a id="delegation_and_callbacks"></a>Delegation and Callbacks
+## <a id="delegation-and-callbacks"></a>Delegation and Callbacks
 
 When working with *AdmitadSDK* from Swift environment you are provided with two mechanisms of notification on event tracking success or failure. Every event triggering method takes a completion callback. In the callback you can check if an error has occurred. *AdmitadTracker* instance also notifies its *delegate* object conforming to *AdmitadDelegate* protocol. Both ways of notification are independent from each other and can be used simultaneously and interchangeably. In Objective-C environment only the former mechanism is available.
 

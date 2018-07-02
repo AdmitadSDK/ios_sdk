@@ -20,9 +20,16 @@ internal extension AdmitadEvent {
         params[.currencyCode] = order.currencyCode
         params[.device] = getIDFA()
         params[.json] = order.json
-        params[.tarifcode] = order.tarifCode ?? "";
-        params[.promocode] = order.promocode ?? "";
-        
+        params[.channel] = order.channel;
+
+        if let tarifcode = order.tarifCode {
+            params[.tarifcode] = tarifcode;
+        }
+
+        if let promocode = order.promocode {
+            params[.promocode] = promocode;
+        }
+
         let url = try AdmitadURL.requestURL(params: params)
         
         return AdmitadEvent(url: url)
@@ -37,8 +44,15 @@ internal extension AdmitadEvent {
         params[.currencyCode] = order.currencyCode
         params[.device] = getIDFA()
         params[.json] = order.json
-        params[.tarifcode] = order.tarifCode ?? "";
-        params[.promocode] = order.promocode ?? "";
+        params[.channel] = order.channel;
+
+        if let tarifcode = order.tarifCode {
+            params[.tarifcode] = tarifcode;
+        }
+
+        if let promocode = order.promocode {
+            params[.promocode] = promocode;
+        }
 
         let url = try AdmitadURL.requestURL(params: params)
 
