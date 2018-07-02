@@ -21,6 +21,7 @@ internal extension AdmitadEvent {
         params[.device] = getIDFA()
         params[.json] = order.json
         params[.tarifcode] = order.tarifCode ?? "";
+        params[.promocode] = order.promocode ?? "";
         
         let url = try AdmitadURL.requestURL(params: params)
         
@@ -37,7 +38,8 @@ internal extension AdmitadEvent {
         params[.device] = getIDFA()
         params[.json] = order.json
         params[.tarifcode] = order.tarifCode ?? "";
-        
+        params[.promocode] = order.promocode ?? "";
+
         let url = try AdmitadURL.requestURL(params: params)
 
         return AdmitadEvent(url: url)

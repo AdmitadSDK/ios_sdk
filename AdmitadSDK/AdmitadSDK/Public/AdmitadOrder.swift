@@ -38,19 +38,26 @@ public class AdmitadOrder: NSObject {
      Tarif code to set price alterations depending on item or order type.
     */
     @objc public let tarifCode: String?
+
+    /**
+     Promocode will be shown in order analytics.
+    */
+    @objc public let promocode: String?
     
     @objc public init(id: String,
                 totalPrice: String,
                 currencyCode: String,
                 items: [AdmitadOrderItem],
                 userInfo: [String: String]? = nil,
-                tarifCode: String? = nil) {
+                tarifCode: String? = nil,
+                promocode: String? = nil) {
         self.id = id
         self.totalPrice = totalPrice
         self.currencyCode = currencyCode
         self.items = items
         self.userInfo = userInfo
         self.tarifCode = tarifCode
+        self.promocode = promocode
     }
 }
 
@@ -71,6 +78,9 @@ internal extension AdmitadOrder {
         guard let tarifCode = url[AdmitadParameter.tarifcode.rawValue] else {
             return nil
         }
+        guard let promocode = url[AdmitadParameter.promocode.rawValue] else {
+            return nil
+        }
 
         let items = json.items
         let userInfo = json.userInfo
@@ -80,7 +90,8 @@ internal extension AdmitadOrder {
                   currencyCode: currencyCode,
                   items: items,
                   userInfo: userInfo,
-                  tarifCode: tarifCode)
+                  tarifCode: tarifCode,
+                  promocode: promocode)
     }
 }
 
