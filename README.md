@@ -269,6 +269,17 @@ Objective-C:
 ```Objective-C
 AdmitadOrder *orderWithTarif = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo tarifCode:tarifCode];
 ```
+
+You can initialize *AdmitadOrder* with extra parameter *promocode*. Then Admitad will show promocode for this order in statistics report of your campaign.
+
+Swift:
+```Swift
+let orderWithPromocode = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo, promocode: "SUPER_PROMO")
+```
+Objective-C:
+```Objective-C
+AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo promocode:promocode];
+```
 #### <a id="confirmed_purchase"> Confirmed Purchase
 Swift:
 ```Swift
