@@ -11,7 +11,7 @@ Admitad help center: https://help.admitad.com/en/advertiser/topic/195-mobile-sdk
 * [Installation via CocoaPods](#installation-via-cocoapods)
 * [Alamofire version](#alamofire-version)
 * [Objective-C interoperability](#objective-c-interoperability)
-* [Setting AppDelegate](#setting-app-delegate)
+* [Setting AppDelegate](#setting-appdelegate)
 * [Event Tracking](#event-tracking)
     * [User Id](#user-id)
     * [Register](#register)
@@ -55,17 +55,18 @@ To add *AdmitadSDK* itself please follow these steps:
 ### <a id="installation-via-cocoapods"></a>Installation via CocoaPods
 
 If you have CocoaPods installed (installation process is described [here](https://guides.cocoapods.org/using/getting-started.html)) do the following:
+
 1. `cd` to the directory where your project is located.
 2. run `pod init` in Terminal. A *Podfile* will be created.
-3. Modify the *Podfile* to look like this:
-```ruby
-platform :ios, '9.0'
-use_frameworks!
+3. Modify the *Podfile* to look like this:  
+    ```ruby
+    platform :ios, '9.0'
+    use_frameworks!
 
-target '<Your Target>' do
-pod 'AdmitadSDK'
-end
-```
+    target '<Your Target>' do
+    pod 'AdmitadSDK'
+    end
+    ```
 4. Run `pod install`. A *.xcworkspace* will be created.
 5. Close your project (if opened) and open the *.xcworkspace*.
 6. If you've run into some issues installing *AdmitadSDK* via CocoaPods, try running `pod update` in Terminal.
@@ -78,88 +79,86 @@ end
 
 Just add `@import AdmitadSDK;` import statement to the source files that make use of *AdmitadSDK*.
 
-## <a id="setting-app-delegate"></a>Setting AppDelegate
-1. Get a Singleton AdmitadTracker Instance
-
+## <a id="setting-appdelegate"></a>Setting AppDelegate
+1. Get a Singleton AdmitadTracker Instance.  
 All sdk methods require an instance of the main AdmitadTracker object. Here's how you can get one. It's stored statically and is accessible from any class.
 
-Swift:
-```Swift
-let admitadTracker = AdmitadTracker.sharedInstance
-```
-Objective-C:
-```Objective-C
-AdmitadTracker *admitadTracker;
-```
+    Swift:
+    ```Swift
+    let admitadTracker = AdmitadTracker.sharedInstance
+    ```
+    Objective-C:
+    ```Objective-C
+    AdmitadTracker *admitadTracker;
+    ```
 
 
 2. In `application(_:didFinishLaunchingWithOptions:)` method assign *AdmitadTracker* singleton's `postbackKey` property to your Admitad Postback Key.
 3. In the same method call *AdmitadTracker*'s `trackAppLaunch()`, `trackReturnedEvent()` и `trackLoyaltyEvent()`.
 
-Swift:
-```Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    Swift:
+    ```Swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-admitadTracker.postbackKey = "postbackKey"
+    admitadTracker.postbackKey = "postbackKey"
 
-admitadTracker.trackAppLaunch()
-admitadTracker.trackReturnedEvent()
-admitadTracker.trackLoyaltyEvent()
+    admitadTracker.trackAppLaunch()
+    admitadTracker.trackReturnedEvent()
+    admitadTracker.trackLoyaltyEvent()
 
-return true
-}
-```
-Objective-C:
-```Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    return true
+    }
+    ```
+    Objective-C:
+    ```Objective-C
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-admitadTracker = [AdmitadTracker sharedInstance];
+    admitadTracker = [AdmitadTracker sharedInstance];
 
-admitadTracker.postbackKey = @"postbackKey";
+    admitadTracker.postbackKey = @"postbackKey";
 
-[admitadTracker trackAppLaunch];
-[admitadTracker trackReturnedEventWithUserId:nil completion:nil];
-[admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
+    [admitadTracker trackAppLaunch];
+    [admitadTracker trackReturnedEventWithUserId:nil completion:nil];
+    [admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
 
-return YES;
-}
+    return YES;
+    }
 
-```
-
+    ```
 4. To track Universal Links usage, in `application(_:continue:restorationHandler:)` call corresondingly named `continueUserActivity` method and pass `userActivity` to it as parameter.
 
-Swift:
-```Swift
-func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-admitadTracker.continueUserActivity(userActivity)
-return true
-}
-```
-Objective-C:
-```Objective-C
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    Swift:
+    ```Swift
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    admitadTracker.continueUserActivity(userActivity)
+    return true
+    }
+    ```
+    Objective-C:
+    ```Objective-C
+    - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
 
-[admitadTracker continueUserActivity:userActivity];
-return YES;
-}
-```
+    [admitadTracker continueUserActivity:userActivity];
+    return YES;
+    }
+    ```    
 5. To track URL Schemes usage, in `application(_:open:options:)` call `openUrl` method and pass `url` to it as parameter.
 
-Swift:
-```Swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-admitadTracker.openUrl(url)
-return true
-}
-```
-Objective-C:
-```Objective-C
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    Swift:
+    ```Swift
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    admitadTracker.openUrl(url)
+    return true
+    }
+    ```
+    Objective-C:
+    ```Objective-C
+    - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
 
-[tracker openUrl:url];
-return YES;
-}
-```
+    [tracker openUrl:url];
+    return YES;
+    }
+    ```
 
 ## <a id="event-tracking"></a>Event Tracking
 
@@ -167,7 +166,7 @@ If you have setup your *AppDelegate* right, *Installed* event is triggered autom
 
 Methods `trackRegisterEvent()`, `trackReturnedEvent()` and `trackLoyaltyEvent()` can take user ID as parameter. Optionally you can setup *AdmitadTracker* singleton's `userId` property. If you prefer not to provide user ID in any of these ways, user ID will be generated automatically.
 
-#### <a id="user-id">User Id
+#### <a id="user-id"></a>User Id
 Swift:
 ```Swift
 // somewhere in your code
@@ -179,7 +178,7 @@ Objective-C:
 // somewhere in your code
 admitadTracker.userId = userId
 ```
-#### <a id="register">Register
+#### <a id="register"></a>Register
  *Register* event are triggered when:
 
 Swift:
@@ -198,7 +197,7 @@ or
 ```Objective-C
 [admitadTracker trackRegisterEventWithUserId: userId completion:nil];
 ```
-#### <a id="returned">Returned
+#### <a id="returned"></a>Returned
  *Returned* event are triggered when:
 
 Swift:
@@ -217,7 +216,7 @@ or
 ```Objective-C
 [admitadTracker trackReturnedEventWithUserId: userId completion:nil];
 ```
-#### <a id="loyalty">Loyalty
+#### <a id="loyalty"></a>Loyalty
  *Loyalty* event are triggered when: 
 
 Swift:
@@ -236,7 +235,7 @@ or
 ```Objective-C
 [admitadTracker trackLoyaltyEventWithUserId: userId completion:nil];
 ```
-#### <a id="order">Order
+#### <a id="order"></a>Order
 To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively. 
 
 Swift:
@@ -261,7 +260,7 @@ AdmitadOrder *order = [[AdmitadOrder alloc] initWithId:id totalPrice:price curre
 
   * You can customize your order using any combination of additional parameters.  
   
-###### _<a id="tarifCode">tarifCode_
+###### _<a id="tarifcode"></a>tarifCode_
 You can initialize *AdmitadOrder* with extra parameter *tarifCode*. Then Admitad can apply this tariff to the order as defined in your agreement.
 To get tariff codes ask your Admitad account manager.
 
@@ -274,7 +273,7 @@ Objective-C:
 AdmitadOrder *orderWithTarif = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo tarifCode:tarifCode];
 ```
 
-###### _<a id="promoCode">promocode_
+###### _<a id="promocode"></a>promocode_
 You can initialize *AdmitadOrder* with extra parameter *promocode*. Then Admitad will show promocode for this order in statistics report of your campaign.
 
 Swift:
@@ -286,7 +285,7 @@ Objective-C:
 AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo promocode:promocode];
 ```
 
-###### _<a id="channel">channel_
+###### _<a id="channel"></a>channel_
   You can initialize AdmitadOrder with extra parameter *channel*. It is used for order deduplication.  
   If you intend to attribute this order to Admitad then set channel to `AdmitadOrder.ADM_MOBILE_CHANNEL`.  
   If you intend to attribute this order to other affiliate network then set channel value to its name.  
@@ -301,7 +300,7 @@ Objective-C:
 AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo channel:channel];
 ```
 
-#### <a id="confirmed-purchase">Confirmed Purchase
+#### <a id="confirmed-purchase"></a>Confirmed Purchase
 Swift:
 ```Swift
 admitadTracker.trackConfirmedPurchaseEvent(order: order)
@@ -310,7 +309,7 @@ Objective-C:
 ```Objective-C
 [admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
 ```
-#### <a id="paid-order">Paid Order
+#### <a id="paid-order"></a>Paid Order
 Swift:
 ```Swift
 admitadTracker.trackPaidOrderEvent(order: order)
