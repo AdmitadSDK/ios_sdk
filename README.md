@@ -33,19 +33,20 @@ Make sure that your project's deployment target is iOS 9.0 or higher.
 Your project should be set up to make interaction with URL Schemes and Universal Links possible.
 **Note**: you also should test on a real device because deeplinking doesn't work on simulator and therefore most of *AdmitadSDK* functionality won't be available.
 
+**Important** *AdmitadSDK* uses version 4.x of *Alamofire* as a dependency. So if you use *Alamofire* in your project, it's major release number should be 4. You're free to specify any minor release number for your needs.
+The link below contains fully descriptive manual on Alamofire installation process:
+[Alamofire GitHub Page](https://github.com/Alamofire/Alamofire)
+
 To add *AdmitadSDK* to your project you have two options:
 1. Manual Installation
 2. Installation via CocoaPods
 
 ### <a id="manual-installation"></a>Manual Installation
 
-*AdmitadSDK* makes use of *Alamofire* framework. In order to use AdmitadSDK please add Alamofire to your project.
-The link below contains fully descriptive manual on Alamofire installation process:
-[Alamofire GitHub Page](https://github.com/Alamofire/Alamofire)
 
 To add *AdmitadSDK* itself please follow these steps:
 1. Clone this repository or download zip-file.
-2. Drag and drop the *AdmitadSDK* folder to Project Navigator in Xcode. Make sure that your target is checked in prompt.
+2. Drag and drop the *AdmitadSDK.xcodeproj* to Project Navigator in Xcode of your application's Xcode project.
 ![Drag and Drop](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/XcodeProj.png)
 3. In your project, reveal the 'AdmitadSDK.xcodeproj > Products' hierarchy. Then drag the Admitad.framework product to the 'Embedded Binaries' section of your build product.
 ![Embed framework](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/EmbedFramework.gif)
@@ -62,16 +63,13 @@ If you have CocoaPods installed (installation process is described [here](https:
     use_frameworks!
 
     target '<Your Target>' do
-    pod 'AdmitadSDK'
+        pod 'AdmitadSDK'
     end
     ```
 4. Run `pod install`. A *.xcworkspace* will be created.
 5. Close your project (if opened) and open the *.xcworkspace*.
 6. If you've run into some issues installing *AdmitadSDK* via CocoaPods, try running `pod update` in Terminal.
 
-## <a id="alamofire-version"></a>Alamofire version
-
-*AdmitadSDK* uses version 4.x of *Alamofire* as a dependency. So if you use *Alamofire* in your project, it's major release number should be 4. You're free to specify any minor release number for your needs.
 
 ## <a id="objective-c-interoperability"></a>Objective-C interoperability
 

@@ -21,9 +21,25 @@
 		222ACFAB1FC6C13F009B6D2A /* CartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 222ACFA51FC6C13E009B6D2A /* CartVC.m */; };
 		222ACFAC1FC6C13F009B6D2A /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 222ACFA81FC6C13E009B6D2A /* UserInfo.m */; };
 		222ACFAD1FC6C13F009B6D2A /* RegistrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 222ACFA91FC6C13E009B6D2A /* RegistrationVC.m */; };
+		2FBBDE11D1580F486CF9E8DA /* Pods_ObjCDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7FB53E60FC11C54453D63A /* Pods_ObjCDemoApp.framework */; };
+		C1A52E965CF596E2B1F12BBD /* Pods_SwiftDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E064B27B548E1E72E2871497 /* Pods_SwiftDemoApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AF0459A820F62CF30070A544 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E633785D656EF468A97CCA9 /* Pods-ObjCDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		222ACF5F1FC6C01D009B6D2A /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222ACF611FC6C01D009B6D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222ACF661FC6C01D009B6D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +64,11 @@
 		222ACFAA1FC6C13F009B6D2A /* CartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartVC.h; sourceTree = "<group>"; };
 		2231CCD71FC6D0C300B5D629 /* ObjCDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjCDemoApp.entitlements; sourceTree = "<group>"; };
 		2231CCD81FC6D0FC00B5D629 /* SwiftDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDemoApp.entitlements; sourceTree = "<group>"; };
+		3961FB72890E9459C19253DC /* Pods-ObjCDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7FB53E60FC11C54453D63A /* Pods_ObjCDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjCDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		623EC249E3EA7F51CB835A92 /* Pods-SwiftDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E064B27B548E1E72E2871497 /* Pods_SwiftDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0DC1AC1F6596AA14B3142F6 /* Pods-SwiftDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A52E965CF596E2B1F12BBD /* Pods_SwiftDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBBDE11D1580F486CF9E8DA /* Pods_ObjCDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +97,8 @@
 				222ACF601FC6C01D009B6D2A /* SwiftDemoApp */,
 				222ACF8C1FC6C063009B6D2A /* ObjCDemoApp */,
 				222ACEFD1FC6BE2B009B6D2A /* Products */,
+				BECEAFB201AB856DC9FCC589 /* Pods */,
+				458E6CD75E48CD0E3B8C9B8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +147,26 @@
 			path = ObjCDemoApp;
 			sourceTree = "<group>";
 		};
+		458E6CD75E48CD0E3B8C9B8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E7FB53E60FC11C54453D63A /* Pods_ObjCDemoApp.framework */,
+				E064B27B548E1E72E2871497 /* Pods_SwiftDemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BECEAFB201AB856DC9FCC589 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3961FB72890E9459C19253DC /* Pods-ObjCDemoApp.debug.xcconfig */,
+				0E633785D656EF468A97CCA9 /* Pods-ObjCDemoApp.release.xcconfig */,
+				623EC249E3EA7F51CB835A92 /* Pods-SwiftDemoApp.debug.xcconfig */,
+				F0DC1AC1F6596AA14B3142F6 /* Pods-SwiftDemoApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 222ACF6E1FC6C01D009B6D2A /* Build configuration list for PBXNativeTarget "SwiftDemoApp" */;
 			buildPhases = (
+				52E62859147987A60251B78A /* [CP] Check Pods Manifest.lock */,
 				222ACF5B1FC6C01D009B6D2A /* Sources */,
 				222ACF5C1FC6C01D009B6D2A /* Frameworks */,
 				222ACF5D1FC6C01D009B6D2A /* Resources */,
+				AF0459A820F62CF30070A544 /* Embed Frameworks */,
+				48BD6845F5DE90EF3C7CF6E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 222ACF9E1FC6C063009B6D2A /* Build configuration list for PBXNativeTarget "ObjCDemoApp" */;
 			buildPhases = (
+				6983A8EECF848DE982A0EE29 /* [CP] Check Pods Manifest.lock */,
 				222ACF871FC6C063009B6D2A /* Sources */,
 				222ACF881FC6C063009B6D2A /* Frameworks */,
 				222ACF891FC6C063009B6D2A /* Resources */,
+				3FFA691F2CF78411C42536AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Admitad;
 				TargetAttributes = {
 					222ACF5E1FC6C01D009B6D2A = {
@@ -230,6 +280,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FFA691F2CF78411C42536AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdmitadSDK/AdmitadSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdmitadSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48BD6845F5DE90EF3C7CF6E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdmitadSDK/AdmitadSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdmitadSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52E62859147987A60251B78A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6983A8EECF848DE982A0EE29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjCDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		222ACF5B1FC6C01D009B6D2A /* Sources */ = {
@@ -306,6 +435,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -313,6 +443,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -363,6 +494,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -370,6 +502,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -401,14 +534,16 @@
 		};
 		222ACF6F1FC6C01D009B6D2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 623EC249E3EA7F51CB835A92 /* Pods-SwiftDemoApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftDemoApp/SwiftDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92DDWGSQRK;
 				INFOPLIST_FILE = SwiftDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = admitad.SwiftDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,14 +552,16 @@
 		};
 		222ACF701FC6C01D009B6D2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0DC1AC1F6596AA14B3142F6 /* Pods-SwiftDemoApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftDemoApp/SwiftDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = admitad.SwiftDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,14 +570,16 @@
 		};
 		222ACF9F1FC6C063009B6D2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3961FB72890E9459C19253DC /* Pods-ObjCDemoApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjCDemoApp/ObjCDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92DDWGSQRK;
 				INFOPLIST_FILE = ObjCDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = admitad.SwiftDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,14 +587,16 @@
 		};
 		222ACFA01FC6C063009B6D2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E633785D656EF468A97CCA9 /* Pods-ObjCDemoApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjCDemoApp/ObjCDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92DDWGSQRK;
 				INFOPLIST_FILE = ObjCDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = admitad.SwiftDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

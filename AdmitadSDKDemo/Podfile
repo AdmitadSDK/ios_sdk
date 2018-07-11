@@ -1,15 +1,20 @@
+# Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-target 'SwiftDemoApp' do
+target 'ObjCDemoApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'AdmitadSDK', :git => 'https://github.com/dcherednikov/AdmitadSDK'
-
+  # Pods for ObjCDemoApp
+  pod 'Alamofire', '~> 4.7'
+  pod 'AdmitadSDK'
 end
 
-target 'ObjCDemoApp' do
+target 'SwiftDemoApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'AdmitadSDK', :git => 'https://github.com/dcherednikov/AdmitadSDK'
-
+  # Pods for SwiftDemoApp
+  pod 'Alamofire', '~> 4.7'
+  pod 'AdmitadSDK'
 end

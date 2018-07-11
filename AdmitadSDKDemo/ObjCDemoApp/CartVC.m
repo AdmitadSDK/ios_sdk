@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, CartActionType) {
     [spinner startAnimating];
 
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [admitadTracker trackConfirmedPurchaseEventWithOrder:[self buildOrder] completion:^(AdmitadError *error) {
+    [admitadTracker trackConfirmedPurchaseEventWithOrder:[self buildOrder] channel:nil completion:^(AdmitadError *error) {
 
         [spinner stopAnimating];
         if (!error) {
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSInteger, CartActionType) {
     [spinner startAnimating];
 
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [admitadTracker trackPaidOrderEventWithOrder:[self buildOrder] completion:^(AdmitadError *error) {
+    [admitadTracker trackPaidOrderEventWithOrder:[self buildOrder] channel:nil completion:^(AdmitadError *error) {
 
         [spinner stopAnimating];
         if (!error) {
@@ -167,9 +167,12 @@ typedef NS_ENUM(NSInteger, CartActionType) {
 
     return [[AdmitadOrder alloc] initWithId:@"123456789"
                                  totalPrice:[self orderPrice]
-                               currencyCode:currencyCode
-                                      items:items
-                                   userInfo:userInfo];
+                                 currencyCode:currencyCode
+                                 items:items
+                                 userInfo:userInfo
+                                 tarifCode:@"1"
+                                 promocode:@""
+                                ];
 }
 
 - (NSString *)orderPrice {

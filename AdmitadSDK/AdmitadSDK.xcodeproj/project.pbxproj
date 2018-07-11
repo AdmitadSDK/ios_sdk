@@ -41,8 +41,6 @@
 		22A982031F9A2663006260EA /* AdmitadJsonParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadJsonParameter.swift; sourceTree = "<group>"; };
 		22EFFD241F9E36EF00D18A80 /* UIDevice+Fingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Fingerprint.swift"; sourceTree = "<group>"; };
 		22EFFD261F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadUserDefaultsKeys.swift; sourceTree = "<group>"; };
-		2F36B02371D5B12C733B7481 /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "../AdmitadSDK/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		5E9DC0E1CB5BBA871075B5EF /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0888A51F880BC800B9C9F7 /* AdmitadTrackingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTrackingType.swift; sourceTree = "<group>"; };
 		6C446EC51F84EE6300AFA986 /* AdmitadReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManager.swift; sourceTree = "<group>"; };
 		6C446EC71F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManagerListener.swift; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 		6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadLogger.swift; sourceTree = "<group>"; };
 		6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequestStorage.swift; sourceTree = "<group>"; };
 		6CF922C01F7CD3DB00D0A155 /* AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C7445717D76B85A0DE19F29 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
 		AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AdmitadSDK.xcodeproj; sourceTree = "<group>"; };
 		AF340F6C20EF9E26005B973B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8EABB020EE5947009C3B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +69,6 @@
 		AF8EABB920EE5962009C3B38 /* AdmitadSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmitadSDK.h; sourceTree = "<group>"; };
 		AF8EABBA20EE5962009C3B38 /* AdmitadTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadTracker.swift; sourceTree = "<group>"; };
 		AF8EABC320EE5D40009C3B38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA90C085519D46A486A41DF9 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "../AdmitadSDK/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,17 +150,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5231CF3D6FB29F647C559102 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2F36B02371D5B12C733B7481 /* Pods-AdmitadSDK.debug.xcconfig */,
-				EA90C085519D46A486A41DF9 /* Pods-AdmitadSDK.release.xcconfig */,
-				5E9DC0E1CB5BBA871075B5EF /* Pods-AdmitadSDK.debug.xcconfig */,
-				8C7445717D76B85A0DE19F29 /* Pods-AdmitadSDK.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6C446ECB1F84F67B00AFA986 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +203,6 @@
 				AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */,
 				6CF922C21F7CD3DB00D0A155 /* AdmitadSDK */,
 				6CF922C11F7CD3DB00D0A155 /* Products */,
-				5231CF3D6FB29F647C559102 /* Pods */,
 				4B6FD471B6220056CC561390 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -279,7 +263,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CF922C81F7CD3DB00D0A155 /* Build configuration list for PBXNativeTarget "AdmitadSDK" */;
 			buildPhases = (
-				81E12815427EE15C27B8F873 /* [CP] Check Pods Manifest.lock */,
 				6CF922BB1F7CD3DB00D0A155 /* Sources */,
 				6CF922BC1F7CD3DB00D0A155 /* Frameworks */,
 				6CF922BD1F7CD3DB00D0A155 /* Headers */,
@@ -344,27 +327,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		81E12815427EE15C27B8F873 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdmitadSDK-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CF922BB1F7CD3DB00D0A155 /* Sources */ = {
@@ -521,7 +483,6 @@
 		};
 		6CF922C91F7CD3DB00D0A155 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E9DC0E1CB5BBA871075B5EF /* Pods-AdmitadSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -546,7 +507,6 @@
 		};
 		6CF922CA1F7CD3DB00D0A155 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C7445717D76B85A0DE19F29 /* Pods-AdmitadSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
