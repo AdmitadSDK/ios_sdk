@@ -43,15 +43,6 @@ public class AdmitadOrder: NSObject {
      Promocode will be shown in order analytics.
     */
     @objc public let promocode: String?
-
-    /**
-    Channel is used to show to which source order will be attributed.
-    By default order is attributed to admitad.
-    */
-    @objc public let channel: String
-
-    static let ADM_MOBILE_CHANNEL = "adm_mobile"; // order attributed to admitad sdk
-    static let UNKNOWN_CHANNEL = "na";  // order with unknown attribution
     
     @objc public init(id: String,
                 totalPrice: String,
@@ -59,8 +50,7 @@ public class AdmitadOrder: NSObject {
                 items: [AdmitadOrderItem],
                 userInfo: [String: String]? = nil,
                 tarifCode: String? = nil,
-                promocode: String? = nil,
-                channel: String = AdmitadOrder.ADM_MOBILE_CHANNEL)
+                promocode: String? = nil)
     {
         self.id = id
         self.totalPrice = totalPrice
@@ -69,7 +59,6 @@ public class AdmitadOrder: NSObject {
         self.userInfo = userInfo
         self.tarifCode = tarifCode
         self.promocode = promocode
-        self.channel = channel
     }
 }
 
@@ -93,9 +82,6 @@ internal extension AdmitadOrder {
         guard let promocode = url[AdmitadParameter.promocode.rawValue] else {
             return nil
         }
-        guard let channel = url[AdmitadParameter.channel.rawValue] else {
-            return AdmitadOrder.ADM_MOBILE_CHANNEL
-        }
 
         let items = json.items
         let userInfo = json.userInfo
@@ -106,8 +92,7 @@ internal extension AdmitadOrder {
                   items: items,
                   userInfo: userInfo,
                   tarifCode: tarifCode,
-                  promocode: promocode,
-                  channel: channel)
+                  promocode: promocode)
     }
 }
 

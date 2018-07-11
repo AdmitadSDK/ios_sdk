@@ -58,6 +58,11 @@ public class AdmitadTracker: NSObject {
      Optional delegate object that is notified on tracking events.
      */
     public weak var delegate: AdmitadDelegate?
+    
+    // order attributed to admitad sdk
+    @objc public static let ADM_MOBILE_CHANNEL = "adm_mobile";
+    // order with unknown attribution
+    @objc public static let UNKNOWN_CHANNEL = "na";
 
     // MARK: - internal
     internal private(set) var uid: String?
@@ -118,6 +123,7 @@ public extension AdmitadTracker {
      - parameter completion: Completion to define if event tracking was successfull.
      */
     @objc public func trackConfirmedPurchaseEvent(order: AdmitadOrder,
+                                                  channel: String? = nil,
                                                   completion: AdmitadCompletion? = nil) {
         do {
             let event = try AdmitadEvent.confirmedPurchaseEvent(order: order)
@@ -136,6 +142,7 @@ public extension AdmitadTracker {
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackPaidOrderEvent(order: AdmitadOrder,
+                                          channel: String? = nil,
                                           completion: AdmitadCompletion? = nil) {
         do {
             let event = try AdmitadEvent.paidOrderEvent(order: order)
@@ -154,10 +161,11 @@ public extension AdmitadTracker {
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackRegisterEvent(userId passedUserId: String? = nil,
+                                         channel: String? = nil,
                                          completion: AdmitadCompletion? = nil) {
         let userIdValue = passedUserId ?? getUserIdOrGenerate()
         do {
-            let event = try AdmitadEvent.registerEvent(userId: userIdValue)
+            let event = try AdmitadEvent.registerEvent(userId: userIdValue, channel: channel)
             handleToService(event: event, completion: completion)
         }
         catch {
@@ -173,11 +181,13 @@ public extension AdmitadTracker {
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackLoyaltyEvent(userId passedUserId: String? = nil,
+                                        channel: String? = nil,
                                         completion: AdmitadCompletion? = nil) {
         let userIdValue = passedUserId ?? getUserIdOrGenerate()
         do {
             let event = try AdmitadEvent.loyaltyEvent(userId: userIdValue,
-                                                      loyalty: loyalty)
+                                                      loyalty: loyalty,
+                                                      channel: channel)
             handleToService(event: event, completion: completion)
         }
         catch {
@@ -193,11 +203,13 @@ public extension AdmitadTracker {
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackReturnedEvent(userId passedUserId: String? = nil,
+                                         channel: String? = nil,
                                          completion: AdmitadCompletion? = nil) {
         let userIdValue = passedUserId ?? getUserIdOrGenerate()
         do {
             let event = try AdmitadEvent.returnedEvent(userId: userIdValue,
-                                                   day: dayReturned)
+                                                   day: dayReturned,
+                                                   channel: channel)
             handleToService(event: event, completion: completion)
         }
         catch {
@@ -210,10 +222,10 @@ public extension AdmitadTracker {
 
 // MARK: - private events
 private extension AdmitadTracker {
-    func trackInstallationEvent() {
+    func trackInstallationEvent(channel: String? = nil) {
         let fingerprint = AdmitadFingerprint()
         do {
-            let event = try AdmitadEvent.installedEvent(fingerprint: fingerprint)
+            let event = try AdmitadEvent.installedEvent(fingerprint: fingerprint, channel: channel)
             handleToService(event: event)
         }
         catch {

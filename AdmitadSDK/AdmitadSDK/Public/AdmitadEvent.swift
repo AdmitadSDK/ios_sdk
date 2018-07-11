@@ -24,7 +24,7 @@ public class AdmitadEvent: NSObject {
     init(url: URL) {
         let type = AdmitadEventType.init(url: url)
 
-        self.type = type ?? .installed
+        self.type = type!
         self.url = url
     }
 }

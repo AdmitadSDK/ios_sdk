@@ -21,6 +21,7 @@ Admitad help center: https://help.admitad.com/en/advertiser/topic/195-mobile-sdk
       * [Additional parameters](#additional-parameters)
       * [Confirmed Purchase](#confirmed-purchase)
       * [Paid Order](#paid-order)
+    * [Events deduplication](#events-deduplication)
 * [Delegation and Callbacks](#delegation-and-callbacks)
 * [License](#license)
 
@@ -44,13 +45,10 @@ The link below contains fully descriptive manual on Alamofire installation proce
 
 To add *AdmitadSDK* itself please follow these steps:
 1. Clone this repository or download zip-file.
-2. Locate *RepoName/AdmitadSDK/AdmitadSDK* folder. This folder should contain two subfolders:  *Internal* and *Public*.
-![Locating AdmitadSDK Directory](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Directory.png)
-3. Copy and paste the *AdmitadSDK* folder to some directory inside your project's directory.
-4. Drag and drop the *AdmitadSDK* folder to Project Navigator in Xcode. Make sure that your target is checked in prompt.
-![Drag and Drop](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Drag.png)
-![Checking Target](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/Target.png)
-5. Build the project.
+2. Drag and drop the *AdmitadSDK* folder to Project Navigator in Xcode. Make sure that your target is checked in prompt.
+![Drag and Drop](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/XcodeProj.png)
+3. In your project, reveal the 'AdmitadSDK.xcodeproj > Products' hierarchy. Then drag the Admitad.framework product to the 'Embedded Binaries' section of your build product.
+![Embed framework](https://raw.githubusercontent.com/AdmitadSDK/ios_sdk/master/images/EmbedFramework.gif)
 
 ### <a id="installation-via-cocoapods"></a>Installation via CocoaPods
 
@@ -118,8 +116,8 @@ All sdk methods require an instance of the main AdmitadTracker object. Here's ho
     admitadTracker.postbackKey = @"postbackKey";
 
     [admitadTracker trackAppLaunch];
-    [admitadTracker trackReturnedEventWithUserId:nil completion:nil];
-    [admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
+    [admitadTracker trackReturnedEventWithUserId:nil channel:nil completion:nil];
+    [admitadTracker trackLoyaltyEventWithUserId:nil channel:nil completion:nil];
 
     return YES;
     }
@@ -191,11 +189,11 @@ admitadTracker.trackRegisterEvent(userId: userId)
 ```
 Objective-C:
 ```Objective-C
-[admitadTracker trackRegisterEventWithUserId:nil completion:nil];
+[admitadTracker trackRegisterEventWithUserId:nil channel:nil completion:nil];
 ```
 or
 ```Objective-C
-[admitadTracker trackRegisterEventWithUserId: userId completion:nil];
+[admitadTracker trackRegisterEventWithUserId: userId channel:nil completion:nil];
 ```
 #### <a id="returned"></a>Returned
  *Returned* event are triggered when:
@@ -210,11 +208,11 @@ admitadTracker.trackReturnedEvent(userId: userId)
 ```
 Objective-C:
 ```Objective-C
-[admitadTracker trackReturnedEventWithUserId:nil completion:nil];
+[admitadTracker trackReturnedEventWithUserId:nil channel:nil completion:nil];
 ```
 or
 ```Objective-C
-[admitadTracker trackReturnedEventWithUserId: userId completion:nil];
+[admitadTracker trackReturnedEventWithUserId: userId channel:nil completion:nil];
 ```
 #### <a id="loyalty"></a>Loyalty
  *Loyalty* event are triggered when: 
@@ -229,11 +227,11 @@ admitadTracker.trackLoyaltyEvent(userId: userId)
 ```
 Objective-C:
 ```Objective-C
-[admitadTracker trackLoyaltyEventWithUserId:nil completion:nil];
+[admitadTracker trackLoyaltyEventWithUserId:nil channel:nil completion:nil];
 ```
 or
 ```Objective-C
-[admitadTracker trackLoyaltyEventWithUserId: userId completion:nil];
+[admitadTracker trackLoyaltyEventWithUserId: userId channel:nil completion:nil];
 ```
 #### <a id="order"></a>Order
 To track *Confirmed Purchase* and *Paid Order* an *AdmitadOrder* object must be instantiated and passed as parameter to `trackConfirmedPurchaseEvent` or `trackPaidOrderEvent` respectively. 
@@ -285,21 +283,6 @@ Objective-C:
 AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo promocode:promocode];
 ```
 
-###### _<a id="channel"></a>channel_
-  You can initialize AdmitadOrder with extra parameter *channel*. It is used for order deduplication.  
-  If you intend to attribute this order to Admitad then set channel to `AdmitadOrder.ADM_MOBILE_CHANNEL`.  
-  If you intend to attribute this order to other affiliate network then set channel value to its name.  
-  If you intend to attribute this order to any network then set channel to `AdmitadOrder.UNKNOWN_CHANNEL`.  
-
-Swift:
-```Swift
-let orderWithPromocode = AdmitadOrder(id: id, totalPrice: price, currencyCode: currencyCode, items: items, userInfo: userInfo, channel: AdmitadOrder.ADM_MOBILE_CHANNEL)
-```
-Objective-C:
-```Objective-C
-AdmitadOrder *orderWithPromocode = [[AdmitadOrder alloc] initWithId:id totalPrice:price currencyCode:currencyCode items:items userInfo:userInfo channel:channel];
-```
-
 #### <a id="confirmed-purchase"></a>Confirmed Purchase
 Swift:
 ```Swift
@@ -307,7 +290,7 @@ admitadTracker.trackConfirmedPurchaseEvent(order: order)
 ```
 Objective-C:
 ```Objective-C
-[admitadTracker trackConfirmedPurchaseEventWithOrder:order completion:nil];
+[admitadTracker trackConfirmedPurchaseEventWithOrder:order channel:nil completion:nil];
 ```
 #### <a id="paid-order"></a>Paid Order
 Swift:
@@ -316,7 +299,24 @@ admitadTracker.trackPaidOrderEvent(order: order)
 ```
 Objective-C:
 ```Objective-C
-[admitadTracker trackPaidOrderEventWithOrder:order completion:nil];
+[admitadTracker trackPaidOrderEventWithOrder:order channel:nil completion:nil];
+```
+
+#### <a id="events-deduplication"></a>Events deduplication
+ * You can pass extra parameter *channel* into methods that track events. It's value will be used for deduplication on Admitad's side.
+  Set channel value to:
+    - `AdmitadTracker.ADMITAD_MOBILE_CHANNEL` if you intend to attribute event to Admitad
+    - name of other affiliate network if you intend to attribute event to other network
+    - `AdmitadTracker.UNKNOWN_CHANNEL` if you don't know to whom the event should be attributed
+
+For example, set attribution channel for confirmed purchase In-App Event:
+Swift:
+```Swift
+admitadTracker.trackConfirmedPurchaseEvent(order: order, channel: AdmitadTracker.ADMITAD_MOBILE_CHANNEL)
+```
+Objective-C:
+```Objective-C
+[admitadTracker trackConfirmedPurchaseEventWithOrder:order channel:@"some_network" completion:nil];
 ```
 
 ## <a id="delegation-and-callbacks"></a>Delegation and Callbacks
@@ -349,7 +349,7 @@ trackRegisterEvent() { error in
 ```
 Objective-C:
 ```
-[admitadTracker trackRegisterEventWithUserId:nil completion:^(AdmitadError *error) {
+[admitadTracker trackRegisterEventWithUserId:nil channel:nil completion:^(AdmitadError *error) {
     // code on finished tracking
     // you can check if error is nil here
 }];

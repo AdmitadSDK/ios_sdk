@@ -18,12 +18,12 @@ import Foundation
  - *returned*: Returned event type. Parametrized with number of days since last launch.
  */
 public enum AdmitadEventType {
-    case installed
-    case confirmedPurchase(order: AdmitadOrder)
-    case paidOrder(order: AdmitadOrder)
-    case registration(userId: String)
-    case loyalty(userId: String, loyalty: Int)
-    case returned(userId: String, dayReturned: Int)
+    case installed(channel: String?)
+    case confirmedPurchase(order: AdmitadOrder, channel: String?)
+    case paidOrder(order: AdmitadOrder, channel: String?)
+    case registration(userId: String, channel: String?)
+    case loyalty(userId: String, loyalty: Int, channel: String?)
+    case returned(userId: String, dayReturned: Int, channel: String?)
 }
 
 // MARK: - utility
@@ -75,29 +75,33 @@ internal extension AdmitadEventType {
 }
 
 private extension AdmitadEventType {
-    init(installedUrl: URL) {
-        self = .installed
+    init(installedUrl url: URL) {
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .installed(channel: channel)
     }
 
     init?(confirmedPurchaseUrl url: URL) {
         guard let order = AdmitadOrder(url: url) else {
             return nil
         }
-        self = .confirmedPurchase(order: order)
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .confirmedPurchase(order: order, channel: channel)
     }
 
     init?(paidOrderUrl url: URL) {
         guard let order = AdmitadOrder(url: url) else {
             return nil
         }
-        self = .paidOrder(order: order)
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .paidOrder(order: order, channel: channel)
     }
 
     init?(registrationUrl url: URL) {
         guard let userId = url[AdmitadParameter.oid.rawValue] else {
             return nil
         }
-        self = .registration(userId: userId)
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .registration(userId: userId, channel: channel)
     }
 
     init?(loyaltyUrl url: URL) {
@@ -108,7 +112,8 @@ private extension AdmitadEventType {
         guard let loyalty = Int(loyaltyString) else {
             return nil
         }
-        self = .loyalty(userId: userId, loyalty: loyalty)
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .loyalty(userId: userId, loyalty: loyalty, channel: channel)
     }
 
     init?(returnedUrl url: URL) {
@@ -119,6 +124,7 @@ private extension AdmitadEventType {
         guard let day = Int(dayString) else {
             return nil
         }
-        self = .returned(userId: userId, dayReturned: day)
+        let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
+        self = .returned(userId: userId, dayReturned: day, channel: channel)
     }
 }

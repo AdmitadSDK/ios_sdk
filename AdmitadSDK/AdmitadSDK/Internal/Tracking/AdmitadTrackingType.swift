@@ -9,7 +9,7 @@
 import Foundation
 
 internal enum AdmitadTrackingType: String {
-    case installed = "installed"
+    case installed = "install"
     case confirmedPurchase = "confirmed_purchase"
     case paidOrder = "paid_order"
     case registration = "registration"

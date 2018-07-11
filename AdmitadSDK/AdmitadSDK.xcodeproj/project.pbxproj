@@ -10,30 +10,31 @@
 		22A982041F9A2663006260EA /* AdmitadJsonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A982031F9A2663006260EA /* AdmitadJsonParameter.swift */; };
 		22EFFD251F9E36EF00D18A80 /* UIDevice+Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFFD241F9E36EF00D18A80 /* UIDevice+Fingerprint.swift */; };
 		22EFFD271F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFFD261F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift */; };
-		5E8BE7D2CBC71BE30DA06E5B /* Pods_AdmitadSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395F01C818D6D5D2E599FC86 /* Pods_AdmitadSDK.framework */; };
 		6C0888A61F880BC800B9C9F7 /* AdmitadTrackingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0888A51F880BC800B9C9F7 /* AdmitadTrackingType.swift */; };
 		6C446EC61F84EE6300AFA986 /* AdmitadReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C446EC51F84EE6300AFA986 /* AdmitadReachabilityManager.swift */; };
 		6C446EC81F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C446EC71F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift */; };
 		6C446ECA1F84F62E00AFA986 /* AdmitadReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C446EC91F84F62E00AFA986 /* AdmitadReachability.swift */; };
 		6C446ECF1F851C0300AFA986 /* AdmitadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C446ECE1F851C0300AFA986 /* AdmitadURL.swift */; };
-		6C6303AD1F82377400666A5A /* AdmitadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6303AC1F82377400666A5A /* AdmitadEvent.swift */; };
-		6C6303AF1F82394C00666A5A /* AdmitadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6303AE1F82394C00666A5A /* AdmitadDelegate.swift */; };
-		6C6303B11F8239BE00666A5A /* AdmitadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6303B01F8239BE00666A5A /* AdmitadError.swift */; };
 		6C6303B31F823C6F00666A5A /* AdmitadFingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6303B21F823C6F00666A5A /* AdmitadFingerprint.swift */; };
-		6C7C781B1F7CE27700E4EF67 /* AdmitadOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C781A1F7CE27700E4EF67 /* AdmitadOrder.swift */; };
 		6C7C781F1F7CE88600E4EF67 /* AdmitadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C781E1F7CE88600E4EF67 /* AdmitadService.swift */; };
 		6C7C78211F7CE98100E4EF67 /* AdmitadParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C78201F7CE98100E4EF67 /* AdmitadParameter.swift */; };
-		6C7C78231F7CEC5300E4EF67 /* AdmitadEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C78221F7CEC5300E4EF67 /* AdmitadEventType.swift */; };
 		6C7C78271F7CFCCA00E4EF67 /* AdmitadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C78261F7CFCCA00E4EF67 /* AdmitadRequest.swift */; };
 		6C7C78381F7D433400E4EF67 /* AdmitadParamValuePairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C78371F7D433400E4EF67 /* AdmitadParamValuePairs.swift */; };
-		6C9B83791F8635DC006C1E8A /* AdmitadOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9B83781F8635DB006C1E8A /* AdmitadOrderItem.swift */; };
 		6CE31D4B1F837B9F00FEE47D /* AdmitadRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31D4A1F837B9F00FEE47D /* AdmitadRequestStatus.swift */; };
 		6CE524841F87BACD00504D5D /* URL+Extraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE524831F87BACD00504D5D /* URL+Extraction.swift */; };
 		6CE524861F87D54800504D5D /* AdmitadEvent+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE524851F87D54800504D5D /* AdmitadEvent+Factory.swift */; };
 		6CF24D5B1F7E4023007053A8 /* AdmitadLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */; };
 		6CF24D5D1F7E782E007053A8 /* AdmitadRequestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */; };
-		6CF922C51F7CD3DB00D0A155 /* AdmitadSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF922C31F7CD3DB00D0A155 /* AdmitadSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CF922D21F7CD46F00D0A155 /* AdmitadTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF922D11F7CD46F00D0A155 /* AdmitadTracker.swift */; };
+		AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF340F6C20EF9E26005B973B /* Alamofire.framework */; };
+		AF8EABB120EE5947009C3B38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF8EABB020EE5947009C3B38 /* Info.plist */; };
+		AF8EABBB20EE5962009C3B38 /* AdmitadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB320EE5962009C3B38 /* AdmitadDelegate.swift */; };
+		AF8EABBC20EE5962009C3B38 /* AdmitadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB420EE5962009C3B38 /* AdmitadError.swift */; };
+		AF8EABBD20EE5962009C3B38 /* AdmitadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB520EE5962009C3B38 /* AdmitadEvent.swift */; };
+		AF8EABBE20EE5962009C3B38 /* AdmitadEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB620EE5962009C3B38 /* AdmitadEventType.swift */; };
+		AF8EABBF20EE5962009C3B38 /* AdmitadOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB720EE5962009C3B38 /* AdmitadOrder.swift */; };
+		AF8EABC020EE5962009C3B38 /* AdmitadOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB820EE5962009C3B38 /* AdmitadOrderItem.swift */; };
+		AF8EABC120EE5962009C3B38 /* AdmitadSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = AF8EABB920EE5962009C3B38 /* AdmitadSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF8EABC220EE5962009C3B38 /* AdmitadTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABBA20EE5962009C3B38 /* AdmitadTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,33 +42,36 @@
 		22EFFD241F9E36EF00D18A80 /* UIDevice+Fingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Fingerprint.swift"; sourceTree = "<group>"; };
 		22EFFD261F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadUserDefaultsKeys.swift; sourceTree = "<group>"; };
 		2F36B02371D5B12C733B7481 /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "../AdmitadSDK/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		395F01C818D6D5D2E599FC86 /* Pods_AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9DC0E1CB5BBA871075B5EF /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0888A51F880BC800B9C9F7 /* AdmitadTrackingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTrackingType.swift; sourceTree = "<group>"; };
 		6C446EC51F84EE6300AFA986 /* AdmitadReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManager.swift; sourceTree = "<group>"; };
 		6C446EC71F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManagerListener.swift; sourceTree = "<group>"; };
 		6C446EC91F84F62E00AFA986 /* AdmitadReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachability.swift; sourceTree = "<group>"; };
 		6C446ECE1F851C0300AFA986 /* AdmitadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadURL.swift; sourceTree = "<group>"; };
-		6C6303AC1F82377400666A5A /* AdmitadEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadEvent.swift; sourceTree = "<group>"; };
-		6C6303AE1F82394C00666A5A /* AdmitadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadDelegate.swift; sourceTree = "<group>"; };
-		6C6303B01F8239BE00666A5A /* AdmitadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadError.swift; sourceTree = "<group>"; };
 		6C6303B21F823C6F00666A5A /* AdmitadFingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadFingerprint.swift; sourceTree = "<group>"; };
-		6C7C781A1F7CE27700E4EF67 /* AdmitadOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadOrder.swift; sourceTree = "<group>"; };
 		6C7C781E1F7CE88600E4EF67 /* AdmitadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadService.swift; sourceTree = "<group>"; };
 		6C7C78201F7CE98100E4EF67 /* AdmitadParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadParameter.swift; sourceTree = "<group>"; };
-		6C7C78221F7CEC5300E4EF67 /* AdmitadEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadEventType.swift; sourceTree = "<group>"; };
 		6C7C78261F7CFCCA00E4EF67 /* AdmitadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequest.swift; sourceTree = "<group>"; };
 		6C7C78371F7D433400E4EF67 /* AdmitadParamValuePairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadParamValuePairs.swift; sourceTree = "<group>"; };
-		6C9B83781F8635DB006C1E8A /* AdmitadOrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadOrderItem.swift; sourceTree = "<group>"; };
 		6CE31D4A1F837B9F00FEE47D /* AdmitadRequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequestStatus.swift; sourceTree = "<group>"; };
 		6CE524831F87BACD00504D5D /* URL+Extraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extraction.swift"; sourceTree = "<group>"; };
 		6CE524851F87D54800504D5D /* AdmitadEvent+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdmitadEvent+Factory.swift"; sourceTree = "<group>"; };
 		6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadLogger.swift; sourceTree = "<group>"; };
 		6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequestStorage.swift; sourceTree = "<group>"; };
 		6CF922C01F7CD3DB00D0A155 /* AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CF922C31F7CD3DB00D0A155 /* AdmitadSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdmitadSDK.h; sourceTree = "<group>"; };
-		6CF922D11F7CD46F00D0A155 /* AdmitadTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTracker.swift; sourceTree = "<group>"; };
 		8C7445717D76B85A0DE19F29 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
+		AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AdmitadSDK.xcodeproj; sourceTree = "<group>"; };
+		AF340F6C20EF9E26005B973B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8EABB020EE5947009C3B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF8EABB320EE5962009C3B38 /* AdmitadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadDelegate.swift; sourceTree = "<group>"; };
+		AF8EABB420EE5962009C3B38 /* AdmitadError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadError.swift; sourceTree = "<group>"; };
+		AF8EABB520EE5962009C3B38 /* AdmitadEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadEvent.swift; sourceTree = "<group>"; };
+		AF8EABB620EE5962009C3B38 /* AdmitadEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadEventType.swift; sourceTree = "<group>"; };
+		AF8EABB720EE5962009C3B38 /* AdmitadOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadOrder.swift; sourceTree = "<group>"; };
+		AF8EABB820EE5962009C3B38 /* AdmitadOrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadOrderItem.swift; sourceTree = "<group>"; };
+		AF8EABB920EE5962009C3B38 /* AdmitadSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmitadSDK.h; sourceTree = "<group>"; };
+		AF8EABBA20EE5962009C3B38 /* AdmitadTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmitadTracker.swift; sourceTree = "<group>"; };
+		AF8EABC320EE5D40009C3B38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA90C085519D46A486A41DF9 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "../AdmitadSDK/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E8BE7D2CBC71BE30DA06E5B /* Pods_AdmitadSDK.framework in Frameworks */,
+				AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +148,8 @@
 		4B6FD471B6220056CC561390 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				395F01C818D6D5D2E599FC86 /* Pods_AdmitadSDK.framework */,
+				AF340F6C20EF9E26005B973B /* Alamofire.framework */,
+				AF8EABC320EE5D40009C3B38 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,21 +196,6 @@
 			path = "URL utility classes";
 			sourceTree = "<group>";
 		};
-		6C5773241F82709D00B44A9B /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				6CF922C31F7CD3DB00D0A155 /* AdmitadSDK.h */,
-				6C6303AE1F82394C00666A5A /* AdmitadDelegate.swift */,
-				6C6303B01F8239BE00666A5A /* AdmitadError.swift */,
-				6C7C781A1F7CE27700E4EF67 /* AdmitadOrder.swift */,
-				6C9B83781F8635DB006C1E8A /* AdmitadOrderItem.swift */,
-				6CF922D11F7CD46F00D0A155 /* AdmitadTracker.swift */,
-				6C6303AC1F82377400666A5A /* AdmitadEvent.swift */,
-				6C7C78221F7CEC5300E4EF67 /* AdmitadEventType.swift */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
 		6C5773251F8270B100B44A9B /* Internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +215,7 @@
 		6CF922B61F7CD3D900D0A155 = {
 			isa = PBXGroup;
 			children = (
+				AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */,
 				6CF922C21F7CD3DB00D0A155 /* AdmitadSDK */,
 				6CF922C11F7CD3DB00D0A155 /* Products */,
 				5231CF3D6FB29F647C559102 /* Pods */,
@@ -243,10 +234,31 @@
 		6CF922C21F7CD3DB00D0A155 /* AdmitadSDK */ = {
 			isa = PBXGroup;
 			children = (
-				6C5773241F82709D00B44A9B /* Public */,
+				AF8EABB020EE5947009C3B38 /* Info.plist */,
+				AF8EABB220EE5962009C3B38 /* Public */,
 				6C5773251F8270B100B44A9B /* Internal */,
 			);
 			path = AdmitadSDK;
+			sourceTree = "<group>";
+		};
+		AF340F4C20EF913D005B973B /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF8EABB220EE5962009C3B38 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				AF8EABB920EE5962009C3B38 /* AdmitadSDK.h */,
+				AF8EABB320EE5962009C3B38 /* AdmitadDelegate.swift */,
+				AF8EABB420EE5962009C3B38 /* AdmitadError.swift */,
+				AF8EABB520EE5962009C3B38 /* AdmitadEvent.swift */,
+				AF8EABB620EE5962009C3B38 /* AdmitadEventType.swift */,
+				AF8EABB720EE5962009C3B38 /* AdmitadOrder.swift */,
+				AF8EABB820EE5962009C3B38 /* AdmitadOrderItem.swift */,
+				AF8EABBA20EE5962009C3B38 /* AdmitadTracker.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +268,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CF922C51F7CD3DB00D0A155 /* AdmitadSDK.h in Headers */,
+				AF8EABC120EE5962009C3B38 /* AdmitadSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +284,6 @@
 				6CF922BC1F7CD3DB00D0A155 /* Frameworks */,
 				6CF922BD1F7CD3DB00D0A155 /* Headers */,
 				6CF922BE1F7CD3DB00D0A155 /* Resources */,
-				07A4D8175708E01244C65D7E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,7 +301,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = tachos;
 				TargetAttributes = {
 					6CF922BF1F7CD3DB00D0A155 = {
@@ -310,6 +321,12 @@
 			mainGroup = 6CF922B61F7CD3D900D0A155;
 			productRefGroup = 6CF922C11F7CD3DB00D0A155 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AF340F4C20EF913D005B973B /* Products */;
+					ProjectRef = AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6CF922BF1F7CD3DB00D0A155 /* AdmitadSDK */,
@@ -322,27 +339,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8EABB120EE5947009C3B38 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07A4D8175708E01244C65D7E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		81E12815427EE15C27B8F873 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,31 +371,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CF922D21F7CD46F00D0A155 /* AdmitadTracker.swift in Sources */,
 				6CE524841F87BACD00504D5D /* URL+Extraction.swift in Sources */,
 				6CF24D5D1F7E782E007053A8 /* AdmitadRequestStorage.swift in Sources */,
-				6C7C781B1F7CE27700E4EF67 /* AdmitadOrder.swift in Sources */,
-				6C6303AD1F82377400666A5A /* AdmitadEvent.swift in Sources */,
 				6C0888A61F880BC800B9C9F7 /* AdmitadTrackingType.swift in Sources */,
 				22EFFD271F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift in Sources */,
 				6CF24D5B1F7E4023007053A8 /* AdmitadLogger.swift in Sources */,
-				6C6303AF1F82394C00666A5A /* AdmitadDelegate.swift in Sources */,
+				AF8EABBF20EE5962009C3B38 /* AdmitadOrder.swift in Sources */,
+				AF8EABBB20EE5962009C3B38 /* AdmitadDelegate.swift in Sources */,
+				AF8EABC220EE5962009C3B38 /* AdmitadTracker.swift in Sources */,
 				6C446EC61F84EE6300AFA986 /* AdmitadReachabilityManager.swift in Sources */,
+				AF8EABBC20EE5962009C3B38 /* AdmitadError.swift in Sources */,
 				6C7C78381F7D433400E4EF67 /* AdmitadParamValuePairs.swift in Sources */,
 				22A982041F9A2663006260EA /* AdmitadJsonParameter.swift in Sources */,
+				AF8EABBD20EE5962009C3B38 /* AdmitadEvent.swift in Sources */,
 				22EFFD251F9E36EF00D18A80 /* UIDevice+Fingerprint.swift in Sources */,
 				6C446ECF1F851C0300AFA986 /* AdmitadURL.swift in Sources */,
-				6C6303B11F8239BE00666A5A /* AdmitadError.swift in Sources */,
 				6C446ECA1F84F62E00AFA986 /* AdmitadReachability.swift in Sources */,
-				6C7C78231F7CEC5300E4EF67 /* AdmitadEventType.swift in Sources */,
 				6C7C78271F7CFCCA00E4EF67 /* AdmitadRequest.swift in Sources */,
+				AF8EABC020EE5962009C3B38 /* AdmitadOrderItem.swift in Sources */,
 				6C7C78211F7CE98100E4EF67 /* AdmitadParameter.swift in Sources */,
 				6C6303B31F823C6F00666A5A /* AdmitadFingerprint.swift in Sources */,
 				6C446EC81F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift in Sources */,
-				6C9B83791F8635DC006C1E8A /* AdmitadOrderItem.swift in Sources */,
 				6CE31D4B1F837B9F00FEE47D /* AdmitadRequestStatus.swift in Sources */,
 				6C7C781F1F7CE88600E4EF67 /* AdmitadService.swift in Sources */,
 				6CE524861F87D54800504D5D /* AdmitadEvent+Factory.swift in Sources */,
+				AF8EABBE20EE5962009C3B38 /* AdmitadEventType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +416,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -420,6 +424,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -448,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -473,6 +478,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -480,6 +486,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -502,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
