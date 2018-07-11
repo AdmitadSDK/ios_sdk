@@ -36,6 +36,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFE97C3D20F6556C001154D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +209,7 @@
 				222ACF881FC6C063009B6D2A /* Frameworks */,
 				222ACF891FC6C063009B6D2A /* Resources */,
 				3FFA691F2CF78411C42536AB /* [CP] Embed Pods Frameworks */,
+				AFE97C3D20F6556C001154D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,11 +547,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 623EC249E3EA7F51CB835A92 /* Pods-SwiftDemoApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftDemoApp/SwiftDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92DDWGSQRK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
@@ -554,7 +564,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0DC1AC1F6596AA14B3142F6 /* Pods-SwiftDemoApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftDemoApp/SwiftDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,7 +585,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjCDemoApp/ObjCDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92DDWGSQRK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ObjCDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
@@ -593,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ObjCDemoApp/ObjCDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92DDWGSQRK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ObjCDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;

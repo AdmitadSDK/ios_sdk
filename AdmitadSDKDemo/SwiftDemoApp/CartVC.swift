@@ -135,7 +135,7 @@ private extension CartVC {
                             currencyCode: currencyCode,
                             items: items,
                             userInfo: ["country": "Russia",
-                                       "payment_method": "PayPal"])
+                                       "payment_method": "PayPal"], tarifCode: "123", promocode: "")
     }
 
     func orderPrice() -> String {

@@ -126,7 +126,7 @@ public extension AdmitadTracker {
                                                   channel: String? = nil,
                                                   completion: AdmitadCompletion? = nil) {
         do {
-            let event = try AdmitadEvent.confirmedPurchaseEvent(order: order)
+            let event = try AdmitadEvent.confirmedPurchaseEvent(order: order, channel: channel)
             handleToService(event: event, completion: completion)
         }
         catch {
@@ -145,7 +145,7 @@ public extension AdmitadTracker {
                                           channel: String? = nil,
                                           completion: AdmitadCompletion? = nil) {
         do {
-            let event = try AdmitadEvent.paidOrderEvent(order: order)
+            let event = try AdmitadEvent.paidOrderEvent(order: order, channel: channel)
             handleToService(event: event, completion: completion)
         }
         catch {
