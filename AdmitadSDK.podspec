@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform      = :ios, "9.0"
   s.homepage      = "https://github.com/AdmitadSDK/ios_sdk.git"
-  s.license       = { :type => "MIT", :file => "LICENSE" }
+  s.license       = 'MIT'
   s.author        = { "Admitad" => "inter@admitad.com" }
   s.source        = { :git => "https://github.com/AdmitadSDK/ios_sdk.git", :tag => "#{s.version}" }
   s.source_files  = 'AdmitadSDK/AdmitadSDK/Internal/**/*.swift', 'AdmitadSDK/AdmitadSDK/Public/*.swift', 'AdmitadSDK/AdmitadSDK/Public/AdmitadSDK.h'
