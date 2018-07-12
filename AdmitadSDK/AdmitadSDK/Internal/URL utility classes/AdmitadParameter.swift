@@ -21,4 +21,6 @@ internal enum AdmitadParameter: String {
     case device = "device"
     case fingerprint = "fingerprint"
     case tarifcode = "tc"
+    case promocode = "promocode"
+    case channel = "channel"
 }

@@ -39,7 +39,7 @@
 
 - (IBAction)registerButtonPressed {
 
-    [admitadTracker trackRegisterEventWithUserId:[UserInfo userId] completion:^(AdmitadError *error) {
+    [admitadTracker trackRegisterEventWithUserId:[UserInfo userId] channel:nil completion:^(AdmitadError *error) {
 
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 

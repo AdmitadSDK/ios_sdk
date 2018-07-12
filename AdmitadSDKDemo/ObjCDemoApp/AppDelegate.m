@@ -30,7 +30,7 @@
 
     [tracker trackAppLaunch];
 
-    [tracker trackReturnedEventWithUserId:nil completion:^(AdmitadError *error) {
+    [tracker trackReturnedEventWithUserId:nil channel:nil completion:^(AdmitadError *error) {
 
         if (!error) {
 
@@ -42,7 +42,7 @@
         }
     }];
 
-    [tracker trackLoyaltyEventWithUserId:nil completion:^(AdmitadError *error) {
+    [tracker trackLoyaltyEventWithUserId:nil channel:nil completion:^(AdmitadError *error) {
 
         if (!error) {
 
