@@ -35,6 +35,4 @@ release:
     url: https://cocoapods.org/pods/AdmitadSDK
   only:
     - tags
-  except:
-    - /^(?!master).+/
 
