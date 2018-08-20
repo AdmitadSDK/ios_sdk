@@ -80,11 +80,12 @@ public extension AdmitadTracker {
     /**
      Should be called in AppDelegate's
      application(_:didFinishLaunchingWithOptions:) method.
+     - parameter channel: Deduplication parameter for attribution of the install event
      */
-    @objc public func trackAppLaunch() {
+    @objc public func trackAppLaunch(channel: String? = nil) {
         if isFirstLaunch() {
             saveFirstLaunchDate()
-            trackInstallationEvent()
+            trackInstallationEvent(channel: channel)
         }
         dayReturned = updateAndGetDayReturned()
         loyalty = updateAndGetLaunchCount()
@@ -120,6 +121,7 @@ public extension AdmitadTracker {
     /**
      Tracks *Confirmed Purchase* event.
      - parameter order: Tracked order.
+     - parameter channel: Deduplication parameter for attribution
      - parameter completion: Completion to define if event tracking was successfull.
      */
     @objc public func trackConfirmedPurchaseEvent(order: AdmitadOrder,
@@ -139,6 +141,7 @@ public extension AdmitadTracker {
     /**
      Tracks *Paid Order* event.
      - parameter order: Tracked order.
+     - parameter channel: Deduplication parameter for attribution
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackPaidOrderEvent(order: AdmitadOrder,
@@ -157,7 +160,8 @@ public extension AdmitadTracker {
 
     /**
      Track *Register* event.
-     - parameter order: Tracked order.
+     - parameter userId: Id of user in your system
+     - parameter channel: Deduplication parameter for attribution
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackRegisterEvent(userId passedUserId: String? = nil,
@@ -177,7 +181,8 @@ public extension AdmitadTracker {
 
     /**
      Tracks *Loyalty* event.
-     - parameter loyalty: Number of launches of the app.
+     - parameter userId: Id of user in your system
+     - parameter channel: Deduplication parameter for attribution
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackLoyaltyEvent(userId passedUserId: String? = nil,
@@ -199,7 +204,8 @@ public extension AdmitadTracker {
 
     /**
      Tracks *Returned* event.
-     - parameter day: Number of days since previous launch
+     - parameter userId: Id of user in your system
+     - parameter channel: Deduplication parameter for attribution
      - parameter completion: Completion to define if event tracking was successfull
      */
     @objc public func trackReturnedEvent(userId passedUserId: String? = nil,

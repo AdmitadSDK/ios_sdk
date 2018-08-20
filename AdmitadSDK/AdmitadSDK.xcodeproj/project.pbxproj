@@ -25,8 +25,7 @@
 		6CE524861F87D54800504D5D /* AdmitadEvent+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE524851F87D54800504D5D /* AdmitadEvent+Factory.swift */; };
 		6CF24D5B1F7E4023007053A8 /* AdmitadLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */; };
 		6CF24D5D1F7E782E007053A8 /* AdmitadRequestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */; };
-		AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF340F6C20EF9E26005B973B /* Alamofire.framework */; };
-		AF8EABB120EE5947009C3B38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF8EABB020EE5947009C3B38 /* Info.plist */; };
+		AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF340F6C20EF9E26005B973B /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AF8EABBB20EE5962009C3B38 /* AdmitadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB320EE5962009C3B38 /* AdmitadDelegate.swift */; };
 		AF8EABBC20EE5962009C3B38 /* AdmitadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB420EE5962009C3B38 /* AdmitadError.swift */; };
 		AF8EABBD20EE5962009C3B38 /* AdmitadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB520EE5962009C3B38 /* AdmitadEvent.swift */; };
@@ -41,6 +40,7 @@
 		22A982031F9A2663006260EA /* AdmitadJsonParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadJsonParameter.swift; sourceTree = "<group>"; };
 		22EFFD241F9E36EF00D18A80 /* UIDevice+Fingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Fingerprint.swift"; sourceTree = "<group>"; };
 		22EFFD261F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadUserDefaultsKeys.swift; sourceTree = "<group>"; };
+		5CBB16BDD91C0922B18D8893 /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0888A51F880BC800B9C9F7 /* AdmitadTrackingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTrackingType.swift; sourceTree = "<group>"; };
 		6C446EC51F84EE6300AFA986 /* AdmitadReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManager.swift; sourceTree = "<group>"; };
 		6C446EC71F84F60300AFA986 /* AdmitadReachabilityManagerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManagerListener.swift; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadLogger.swift; sourceTree = "<group>"; };
 		6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadRequestStorage.swift; sourceTree = "<group>"; };
 		6CF922C01F7CD3DB00D0A155 /* AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C58FF65ED695F2E624B6C9 /* Pods-AdmitadSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.release.xcconfig"; sourceTree = "<group>"; };
 		AF340F4B20EF913D005B973B /* AdmitadSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AdmitadSDK.xcodeproj; sourceTree = "<group>"; };
 		AF340F6C20EF9E26005B973B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8EABB020EE5947009C3B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 				6CF922C21F7CD3DB00D0A155 /* AdmitadSDK */,
 				6CF922C11F7CD3DB00D0A155 /* Products */,
 				4B6FD471B6220056CC561390 /* Frameworks */,
+				A7BEE87F1CA5BE416D704D18 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,8 +227,19 @@
 			path = AdmitadSDK;
 			sourceTree = "<group>";
 		};
+		A7BEE87F1CA5BE416D704D18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CBB16BDD91C0922B18D8893 /* Pods-AdmitadSDK.debug.xcconfig */,
+				73C58FF65ED695F2E624B6C9 /* Pods-AdmitadSDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF340F4C20EF913D005B973B /* Products */ = {
 			isa = PBXGroup;
+			children = (
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -322,7 +335,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF8EABB120EE5947009C3B38 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,12 +495,13 @@
 		};
 		6CF922C91F7CD3DB00D0A155 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CBB16BDD91C0922B18D8893 /* Pods-AdmitadSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 797279Y9YX;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -507,12 +520,13 @@
 		};
 		6CF922CA1F7CD3DB00D0A155 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73C58FF65ED695F2E624B6C9 /* Pods-AdmitadSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 797279Y9YX;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

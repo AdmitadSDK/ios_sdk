@@ -113,7 +113,7 @@ All sdk methods require an instance of the main AdmitadTracker object. Here's ho
 
     admitadTracker.postbackKey = @"postbackKey";
 
-    [admitadTracker trackAppLaunch];
+    [admitadTracker trackAppLaunchWithChannel:nil];
     [admitadTracker trackReturnedEventWithUserId:nil channel:nil completion:nil];
     [admitadTracker trackLoyaltyEventWithUserId:nil channel:nil completion:nil];
 

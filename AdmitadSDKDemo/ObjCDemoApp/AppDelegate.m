@@ -28,7 +28,7 @@
     tracker.loggingEnabled = YES;
     tracker.userId = [UserInfo userId];
 
-    [tracker trackAppLaunch];
+    [tracker trackAppLaunchWithChannel:nil];
 
     [tracker trackReturnedEventWithUserId:nil channel:nil completion:^(AdmitadError *error) {
 
