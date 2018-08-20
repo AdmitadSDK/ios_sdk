@@ -53,6 +53,9 @@
             [self showAlertWithMessage:@"Error tracking Loyalty event"];
         }
     }];
+    
+    NSString* uid = [tracker getUid];
+    NSLog(@"Current uid: %@", uid);
 
     return YES;
 }

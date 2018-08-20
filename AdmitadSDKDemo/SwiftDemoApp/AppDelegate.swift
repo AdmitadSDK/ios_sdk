@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdmitadDelegate {
         // track 'loyalty' and 'returned' events
         admitadTracker.trackReturnedEvent()
         admitadTracker.trackLoyaltyEvent()
-
+        
+        print("Current UID: \(admitadTracker.getUid())");
+        
         return true
     }
 
