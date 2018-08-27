@@ -224,6 +224,14 @@ public extension AdmitadTracker {
             completion?(error as? AdmitadError)
         }
     }
+    
+    /**
+     Return currently stored Admitad uid.
+     - returns: String with uid
+     */
+    @objc public func getUid() -> String {
+        return uid ?? "";
+    }
 }
 
 // MARK: - private events

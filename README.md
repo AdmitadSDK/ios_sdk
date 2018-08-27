@@ -155,6 +155,14 @@ All sdk methods require an instance of the main AdmitadTracker object. Here's ho
     return YES;
     }
     ```
+    
+6. To get current uid:
+    ```Swift
+    let uid = admitadTracker.getUid();
+    ```
+    ```Objective-C
+    NSString* uid = [tracker getUid];  
+    ```   
 
 ## <a id="event-tracking"></a>Event Tracking
 
