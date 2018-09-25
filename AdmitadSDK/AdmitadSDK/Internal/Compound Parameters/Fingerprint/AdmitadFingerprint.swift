@@ -35,7 +35,7 @@ internal extension AdmitadFingerprint {
         model = AdmitadFingerprint.getModel()
         screenDPI = AdmitadFingerprint.getScreenDPI()
         screenHeigth = AdmitadFingerprint.getScreenHeight()
-        screenWidth = AdmitadFingerprint.getScreenHeight()
+        screenWidth = AdmitadFingerprint.getScreenWidth()
         network = AdmitadFingerprint.getNetworkConnectionState()
         os = AdmitadFingerprint.getOs()
         osVersion = AdmitadFingerprint.getOsVersion()
