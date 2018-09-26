@@ -34,10 +34,6 @@ public typealias AdmitadCompletion = (AdmitadError?) -> Void
  */
 public class AdmitadTracker: NSObject {
     /**
-     AdmitadSDK's version number.
-     */
-    @objc public static let versionNumber = 1.0
-    /**
      Property through which the singleton instance is accessed.
      */
     @objc public static let sharedInstance = AdmitadTracker()
@@ -71,8 +67,21 @@ public class AdmitadTracker: NSObject {
     private var service = AdmitadService()
     private var dayReturned = 0
     private var loyalty = 0
+    private var sdkVersion = ""
 
     private override init() {}
+    
+    /**
+     Gets AdmitadSDK's version number from Info.plist.
+     - returns: String with version or "-1" if failed to find
+     */
+    @objc public func getSdkVersion() -> String {
+        if self.sdkVersion.isEmpty {
+            self.sdkVersion = Bundle(for: type(of: self)).infoDictionary?["CFBundleShortVersionString"] as? String ?? "-1"
+        }
+        
+        return self.sdkVersion
+    }
 }
 
 // MARK: - launching and deep-linking

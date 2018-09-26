@@ -118,7 +118,7 @@ private extension AdmitadFingerprint {
     }
 
     static func getSdkVersion() -> String {
-        return AdmitadFingerprint.getOs() + " " + String(AdmitadTracker.versionNumber)
+        return AdmitadTracker.sharedInstance.getSdkVersion()
     }
 
     static func getFirstLaunchDate() -> String {
