@@ -99,14 +99,23 @@ internal extension AdmitadEvent {
         return AdmitadEvent(url: url)
     }
 
-    static func installedEvent(fingerprint: AdmitadFingerprint, channel: String? = nil) throws -> AdmitadEvent {
+    static func installedEvent(channel: String? = nil) throws -> AdmitadEvent {
         var params = try idParameters()
         params[.tracking] = AdmitadTrackingType.installed.rawValue
-        params[.fingerprint] = fingerprint.json
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
-        
-        let url = try AdmitadURL.requestURL(params: params, apiUrl: AdmitadURL.installationTracking)
 
+        let url = try AdmitadURL.requestURL(params: params)
+        
+        return AdmitadEvent(url: url)
+    }
+    
+    static func deviceinfoEvent(fingerprint: AdmitadFingerprint) throws -> AdmitadEvent {
+        var params = try idParameters()
+        params[.tracking] = AdmitadTrackingType.deviceinfo.rawValue
+        params[.fingerprint] = fingerprint.json
+        
+        let url = try AdmitadURL.requestURL(params: params, apiUrl: AdmitadURL.deviceinfoTracking)
+        
         return AdmitadEvent(url: url)
     }
 }

@@ -15,4 +15,5 @@ internal enum AdmitadTrackingType: String {
     case registration = "registration"
     case loyalty = "loyalty"
     case returned = "returned"
+    case deviceinfo = "deviceinfo"
 }

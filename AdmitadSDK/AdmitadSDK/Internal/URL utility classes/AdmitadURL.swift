@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Admitad URL constants
 internal struct AdmitadURL {
 	static let `default` = "https://ad.admitad.com/tt"
-	static let installationTracking = "https://ad.admitad.com/tt"
+	static let deviceinfoTracking = "https://artfut.com/dedup_ios"
 }
 
 internal extension AdmitadURL {

@@ -95,6 +95,7 @@ public extension AdmitadTracker {
         if isFirstLaunch() {
             saveFirstLaunchDate()
             trackInstallationEvent(channel: channel)
+            trackDeviceinfoEvent()
         }
         dayReturned = updateAndGetDayReturned()
         loyalty = updateAndGetLaunchCount()
@@ -246,9 +247,8 @@ public extension AdmitadTracker {
 // MARK: - private events
 private extension AdmitadTracker {
     func trackInstallationEvent(channel: String? = nil) {
-        let fingerprint = AdmitadFingerprint()
         do {
-            let event = try AdmitadEvent.installedEvent(fingerprint: fingerprint, channel: channel)
+            let event = try AdmitadEvent.installedEvent(channel: channel)
             handleToService(event: event)
         }
         catch {
@@ -257,7 +257,18 @@ private extension AdmitadTracker {
 
         saveFirstLaunch()
     }
-
+    
+    func trackDeviceinfoEvent() {
+        let fingerprint = AdmitadFingerprint()
+        do {
+            let event = try AdmitadEvent.deviceinfoEvent(fingerprint: fingerprint)
+            handleToService(event: event)
+        }
+        catch {
+            // do nothing
+        }
+    }
+    
     func handleToService(event: AdmitadEvent,
                          completion: AdmitadCompletion? = nil) {
         service.sendRequest(request: AdmitadRequest(event: event),
