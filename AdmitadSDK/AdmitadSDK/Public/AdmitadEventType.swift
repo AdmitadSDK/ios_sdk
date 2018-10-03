@@ -24,6 +24,7 @@ public enum AdmitadEventType {
     case registration(userId: String, channel: String?)
     case loyalty(userId: String, loyalty: Int, channel: String?)
     case returned(userId: String, dayReturned: Int, channel: String?)
+    case deviceinfo()
 }
 
 // MARK: - utility
@@ -49,6 +50,8 @@ internal extension AdmitadEventType {
             self.init(loyaltyUrl: url)
         case .returned:
             self.init(returnedUrl: url)
+        case .deviceinfo:
+            self.init(deviceinfoUrl: url)
         }
     }
 
@@ -66,6 +69,8 @@ internal extension AdmitadEventType {
             return toString(.loyalty)
         case .returned:
             return toString(.returned)
+        case .deviceinfo:
+            return toString(.deviceinfo)
         }
     }
 
@@ -79,7 +84,11 @@ private extension AdmitadEventType {
         let channel = url[AdmitadParameter.channel.rawValue] ?? AdmitadTracker.ADM_MOBILE_CHANNEL
         self = .installed(channel: channel)
     }
-
+    
+    init(deviceinfoUrl url: URL) {
+        self = .deviceinfo()
+    }
+    
     init?(confirmedPurchaseUrl url: URL) {
         guard let order = AdmitadOrder(url: url) else {
             return nil

@@ -18,7 +18,6 @@ internal extension AdmitadEvent {
         params[.oid] = order.id
         params[.price] = order.totalPrice
         params[.currencyCode] = order.currencyCode
-        params[.device] = getIDFA()
         params[.json] = order.json
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
 
@@ -42,10 +41,9 @@ internal extension AdmitadEvent {
         params[.oid] = order.id
         params[.price] = order.totalPrice
         params[.currencyCode] = order.currencyCode
-        params[.device] = getIDFA()
         params[.json] = order.json
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
-
+        
         if let tarifcode = order.tarifCode {
             params[.tarifcode] = tarifcode;
         }
@@ -64,9 +62,8 @@ internal extension AdmitadEvent {
 
         params[.tracking] = AdmitadTrackingType.registration.rawValue
         params[.oid] = userId
-        params[.device] = getIDFA()
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
-
+        
         let url = try AdmitadURL.requestURL(params: params)
 
         return AdmitadEvent(url: url)
@@ -80,7 +77,6 @@ internal extension AdmitadEvent {
         params[.tracking] = AdmitadTrackingType.loyalty.rawValue
         params[.oid] = userId
         params[.loyalty] = String(loyalty)
-        params[.device] = getIDFA()
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
         
         let url = try AdmitadURL.requestURL(params: params)
@@ -96,7 +92,6 @@ internal extension AdmitadEvent {
         params[.tracking] = AdmitadTrackingType.returned.rawValue
         params[.oid] = userId
         params[.day] = String(day)
-        params[.device] = getIDFA()
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
 
         let url = try AdmitadURL.requestURL(params: params)
@@ -104,15 +99,23 @@ internal extension AdmitadEvent {
         return AdmitadEvent(url: url)
     }
 
-    static func installedEvent(fingerprint: AdmitadFingerprint, channel: String? = nil) throws -> AdmitadEvent {
+    static func installedEvent(channel: String? = nil) throws -> AdmitadEvent {
         var params = try idParameters()
         params[.tracking] = AdmitadTrackingType.installed.rawValue
-        params[.fingerprint] = fingerprint.json
-        params[.device] = getIDFA()
         params[.channel] = channel ?? AdmitadTracker.ADM_MOBILE_CHANNEL
 
-        let url = try AdmitadURL.requestURL(params: params, apiUrl: AdmitadURL.installationTracking)
-
+        let url = try AdmitadURL.requestURL(params: params)
+        
+        return AdmitadEvent(url: url)
+    }
+    
+    static func deviceinfoEvent(fingerprint: AdmitadFingerprint) throws -> AdmitadEvent {
+        var params = try idParameters()
+        params[.tracking] = AdmitadTrackingType.deviceinfo.rawValue
+        params[.fingerprint] = fingerprint.json
+        
+        let url = try AdmitadURL.requestURL(params: params, apiUrl: AdmitadURL.deviceinfoTracking)
+        
         return AdmitadEvent(url: url)
     }
 }
@@ -129,6 +132,9 @@ private extension AdmitadEvent {
         var params = AdmitadParamValuePairs()
         params[.postbackKey] = postbackKey
         params[.admitadUid] = uid
+        params[.device] = getIDFA()
+        params[.sdkVersion] = AdmitadTracker.sharedInstance.getSdkVersion()
+        
         return params
     }
 }

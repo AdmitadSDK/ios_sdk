@@ -23,4 +23,5 @@ internal enum AdmitadParameter: String {
     case tarifcode = "tc"
     case promocode = "promocode"
     case channel = "channel"
+    case sdkVersion = "sdk"
 }
