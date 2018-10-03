@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AdmitadSDK"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "Admitad deeplinks integration SDK for iOS"
   s.description  = <<-DESC
   An easy-to-use SDK allowing you to send Admitad events and manage deeplink transitions.
