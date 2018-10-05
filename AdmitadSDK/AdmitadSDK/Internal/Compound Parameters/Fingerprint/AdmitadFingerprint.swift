@@ -26,6 +26,8 @@ internal struct AdmitadFingerprint: Codable {
     let lastLaunchDate: String
     let carrier: String
     let languageCode: String
+    let batteryLevel: Float
+    let batteryState: String
 }
 
 internal extension AdmitadFingerprint {
@@ -44,6 +46,8 @@ internal extension AdmitadFingerprint {
         lastLaunchDate = AdmitadFingerprint.getLastLaunchDate()
         carrier = AdmitadFingerprint.getCarrier()
         languageCode = AdmitadFingerprint.getLanguageCode()
+        batteryLevel = AdmitadFingerprint.getBatteryLevel()
+        batteryState = AdmitadFingerprint.getBatteryState()
     }
 }
 
@@ -64,6 +68,8 @@ internal extension AdmitadFingerprint {
         case lastLaunchDate = "last_launch_date"
         case carrier = "carrier"
         case languageCode = "lang_code"
+        case batteryLevel = "battery_level"
+        case batteryState = "battery_state"
     }
 
     var json: String {
@@ -140,5 +146,44 @@ private extension AdmitadFingerprint {
 
     static func getLanguageCode() -> String {
         return Locale.current.languageCode ?? ""
+    }
+    
+    static func getBatteryLevel() -> Float {
+        let batteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled;
+        if (!batteryMonitoringEnabled) {
+            UIDevice.current.isBatteryMonitoringEnabled = true
+        }
+        // return monitoring to previous state when finished
+        defer {
+            if (!batteryMonitoringEnabled) {
+                UIDevice.current.isBatteryMonitoringEnabled = false
+            }
+        }
+        
+        return UIDevice.current.batteryLevel
+    }
+    
+    static func getBatteryState() -> String {
+        let batteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled;
+        if (!batteryMonitoringEnabled) {
+            UIDevice.current.isBatteryMonitoringEnabled = true
+        }
+        // return monitoring to previous state when finished
+        defer {
+            if (!batteryMonitoringEnabled) {
+                UIDevice.current.isBatteryMonitoringEnabled = false
+            }
+        }
+        
+        switch UIDevice.current.batteryState {
+        case .unknown:
+            return "unknown"
+        case .unplugged:
+            return "unplugged"
+        case .charging:
+            return "charging"
+        case .full:
+            return "full"
+        }
     }
 }
