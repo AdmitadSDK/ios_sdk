@@ -1,4 +1,3 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
 target 'ObjCDemoApp' do
@@ -7,7 +6,7 @@ target 'ObjCDemoApp' do
 
   # Pods for ObjCDemoApp
   pod 'Alamofire', '~> 4.7'
-  pod 'AdmitadSDK'
+  pod 'AdmitadSDK', :path => '../'
 end
 
 target 'SwiftDemoApp' do
@@ -16,5 +15,5 @@ target 'SwiftDemoApp' do
 
   # Pods for SwiftDemoApp
   pod 'Alamofire', '~> 4.7'
-  pod 'AdmitadSDK'
+  pod 'AdmitadSDK', :path => '../'
 end

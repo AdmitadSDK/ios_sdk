@@ -25,6 +25,7 @@
 		6CE524861F87D54800504D5D /* AdmitadEvent+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE524851F87D54800504D5D /* AdmitadEvent+Factory.swift */; };
 		6CF24D5B1F7E4023007053A8 /* AdmitadLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5A1F7E4023007053A8 /* AdmitadLogger.swift */; };
 		6CF24D5D1F7E782E007053A8 /* AdmitadRequestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF24D5C1F7E782D007053A8 /* AdmitadRequestStorage.swift */; };
+		989DE3277C5D80B54867E8AB /* Pods_AdmitadSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44614130BB39E5D2E7B70A28 /* Pods_AdmitadSDK.framework */; };
 		AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF340F6C20EF9E26005B973B /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AF8EABBB20EE5962009C3B38 /* AdmitadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB320EE5962009C3B38 /* AdmitadDelegate.swift */; };
 		AF8EABBC20EE5962009C3B38 /* AdmitadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8EABB420EE5962009C3B38 /* AdmitadError.swift */; };
@@ -40,6 +41,7 @@
 		22A982031F9A2663006260EA /* AdmitadJsonParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadJsonParameter.swift; sourceTree = "<group>"; };
 		22EFFD241F9E36EF00D18A80 /* UIDevice+Fingerprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Fingerprint.swift"; sourceTree = "<group>"; };
 		22EFFD261F9E385400D18A80 /* AdmitadUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadUserDefaultsKeys.swift; sourceTree = "<group>"; };
+		44614130BB39E5D2E7B70A28 /* Pods_AdmitadSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdmitadSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBB16BDD91C0922B18D8893 /* Pods-AdmitadSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmitadSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdmitadSDK/Pods-AdmitadSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0888A51F880BC800B9C9F7 /* AdmitadTrackingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadTrackingType.swift; sourceTree = "<group>"; };
 		6C446EC51F84EE6300AFA986 /* AdmitadReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmitadReachabilityManager.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF340F6D20EF9E26005B973B /* Alamofire.framework in Frameworks */,
+				989DE3277C5D80B54867E8AB /* Pods_AdmitadSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +150,7 @@
 			children = (
 				AF340F6C20EF9E26005B973B /* Alamofire.framework */,
 				AF8EABC320EE5D40009C3B38 /* Alamofire.framework */,
+				44614130BB39E5D2E7B70A28 /* Pods_AdmitadSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CF922C81F7CD3DB00D0A155 /* Build configuration list for PBXNativeTarget "AdmitadSDK" */;
 			buildPhases = (
+				CAB13DE8E4B12B54FA3A73CD /* [CP] Check Pods Manifest.lock */,
 				6CF922BB1F7CD3DB00D0A155 /* Sources */,
 				6CF922BC1F7CD3DB00D0A155 /* Frameworks */,
 				6CF922BD1F7CD3DB00D0A155 /* Headers */,
@@ -339,6 +344,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CAB13DE8E4B12B54FA3A73CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdmitadSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CF922BB1F7CD3DB00D0A155 /* Sources */ = {

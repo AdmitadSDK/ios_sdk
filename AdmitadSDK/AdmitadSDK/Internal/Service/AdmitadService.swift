@@ -47,6 +47,24 @@ internal extension AdmitadService {
 		//            sendRequestURLSessionImplementation(request: request,
 		//                                                completion: completion)
     }
+    
+    func findUidByDeviceInfo(request: AdmitadRequest,
+                             completion: @escaping AdmitadRequestCompletion) {
+        storage.updateRequestStatus(request, status: .pending)
+        AdmitadLogger.logRequestSent(request)
+        
+        Alamofire.request(request.url)
+            .validate()
+            .responseJSON { responseJSON in
+                switch responseJSON.result {
+                case .success(let value):
+                    guard let jsonObject = value as? [String: Any] else { return }
+                    completion(jsonObject, nil)
+                case .failure(let error):
+                    completion(nil, AdmitadError(type: .unknown, requestError: error))
+                }
+        }
+    }
 }
 
 // MARK: resending requests
@@ -69,7 +87,7 @@ private extension AdmitadService {
 
         storage.updateRequestStatus(request, status: .succeeded)
         completion?(nil)
-    AdmitadTracker.sharedInstance.delegate?.finishedTrackingAdmitadEvent(request.event, error: nil)
+        AdmitadTracker.sharedInstance.delegate?.finishedTrackingAdmitadEvent(request.event, error: nil)
     }
 
     func onRequestFailed(_ request: AdmitadRequest,
@@ -92,7 +110,7 @@ private extension AdmitadService {
         }
 
         completion?(error)
-    AdmitadTracker.sharedInstance.delegate?.finishedTrackingAdmitadEvent(request.event, error: error)
+        AdmitadTracker.sharedInstance.delegate?.finishedTrackingAdmitadEvent(request.event, error: error)
     }
 }
 

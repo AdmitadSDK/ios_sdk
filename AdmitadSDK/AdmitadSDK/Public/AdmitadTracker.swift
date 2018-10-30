@@ -13,6 +13,7 @@ import Foundation
  A completion that can be passed to one of AdmitadTracker's events related methods to check if tracking is successful.
  */
 public typealias AdmitadCompletion = (AdmitadError?) -> Void
+internal typealias AdmitadRequestCompletion = ((_ data: [String: Any]?, _ error: Error?) -> Void)
 
 
 /**
@@ -94,8 +95,13 @@ public extension AdmitadTracker {
     @objc public func trackAppLaunch(channel: String? = nil) {
         if isFirstLaunch() {
             saveFirstLaunchDate()
-            trackInstallationEvent(channel: channel)
-            trackDeviceinfoEvent()
+            trackDeviceinfoEvent() { uid in
+                if let realUid = uid {
+                    self.uid = uid
+                    self.saveUid(realUid)
+                }
+                self.trackInstallationEvent(channel: channel)
+            }
         }
         dayReturned = updateAndGetDayReturned()
         loyalty = updateAndGetLaunchCount()
@@ -258,11 +264,21 @@ private extension AdmitadTracker {
         saveFirstLaunch()
     }
     
-    func trackDeviceinfoEvent() {
+    func trackDeviceinfoEvent(completion: @escaping (_ uid: String?) -> Void) {
         let fingerprint = AdmitadFingerprint()
         do {
             let event = try AdmitadEvent.deviceinfoEvent(fingerprint: fingerprint)
-            handleToService(event: event)
+            service.findUidByDeviceInfo(request: AdmitadRequest(event: event)) { data, error in
+                if error != nil {
+                    completion(nil)
+                    return
+                }
+                guard let jsonObject = data, let uidValue = jsonObject["uid"] as? String else {
+                    completion(nil)
+                    return
+                }
+                completion(uidValue)
+            }
         }
         catch {
             // do nothing
