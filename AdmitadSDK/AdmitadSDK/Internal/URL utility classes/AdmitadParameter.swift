@@ -24,4 +24,7 @@ internal enum AdmitadParameter: String {
     case promocode = "promocode"
     case channel = "channel"
     case sdkVersion = "sdk"
+    case deviceType = "adm_device"
+    case os = "adm_ostype"
+    case method = "adm_method"
 }

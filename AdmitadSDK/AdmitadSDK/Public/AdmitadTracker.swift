@@ -69,6 +69,10 @@ public class AdmitadTracker: NSObject {
     private var dayReturned = 0
     private var loyalty = 0
     private var sdkVersion = ""
+    
+    internal static let osType = "ios"
+    internal static let deviceType = "mobile"
+    internal static let methodType = "mob_sdk"
 
     private override init() {}
     

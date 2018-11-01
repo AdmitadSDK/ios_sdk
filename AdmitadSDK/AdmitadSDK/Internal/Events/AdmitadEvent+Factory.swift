@@ -135,6 +135,10 @@ private extension AdmitadEvent {
         params[.device] = getIDFA()
         params[.sdkVersion] = AdmitadTracker.sharedInstance.getSdkVersion()
         
+        params[.deviceType] = AdmitadTracker.deviceType
+        params[.os] = AdmitadTracker.osType
+        params[.method] = AdmitadTracker.methodType
+        
         return params
     }
 }
