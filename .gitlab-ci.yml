@@ -13,8 +13,6 @@ mirror:
     - master
   except:
     - tags
-  tags:
-    - integration-dind-deploy
 
 release:
   stage: release
@@ -37,6 +35,3 @@ release:
     url: https://cocoapods.org/pods/AdmitadSDK
   only:
     - tags
-  tags:
-    - integration-dind-deploy
-
