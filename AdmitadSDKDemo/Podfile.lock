@@ -1,5 +1,5 @@
 PODS:
-  - AdmitadSDK (1.1.4):
+  - AdmitadSDK (1.2.0):
     - Alamofire (~> 4.0)
   - Alamofire (4.7.3)
 
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AdmitadSDK: 2073c876a43649984c555d5bdc7e0a90da033004
+  AdmitadSDK: ae3f1222a4cf334bc301a55cca74be56469db48c
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
 
 PODFILE CHECKSUM: f8698162f4496884f72cd3d1543452706092ec93

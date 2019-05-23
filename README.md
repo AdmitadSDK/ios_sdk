@@ -3,6 +3,8 @@ iOS integration SDK of https://www.admitad.com/
 
 Admitad help center: https://help.admitad.com/en/advertiser/topic/195-mobile-sdk/
 
+**⚠️Note⚠️** If you need Swift 4, use pod version <= `1.1.4`.
+
 ## Table of contents
 
 
