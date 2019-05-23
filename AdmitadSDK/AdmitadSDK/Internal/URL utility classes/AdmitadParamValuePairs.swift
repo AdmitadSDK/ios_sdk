@@ -25,7 +25,7 @@ internal extension AdmitadParamValuePairs {
             return keyValues.first(where: { $0.key == param})?.value ?? ""
         }
         set {
-            if let index = keyValues.index(where: { $0.key == param}) {
+            if let index = keyValues.firstIndex(where: { $0.key == param}) {
                 keyValues[index] = (key: param, value: newValue)
             } else {
                 keyValues.append((key: param, value: newValue))

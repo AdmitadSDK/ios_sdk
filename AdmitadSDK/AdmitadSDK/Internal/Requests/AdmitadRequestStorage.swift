@@ -68,7 +68,7 @@ private extension AdmitadRequestStorage {
 // MARK: - requests adding and removing
 private extension AdmitadRequestStorage {
     func removeRequest(_ request: AdmitadRequest) {
-        if let index = requests.index(of: request) {
+        if let index = requests.firstIndex(of: request) {
             requests.remove(at: index)
             saveRequests()
         }

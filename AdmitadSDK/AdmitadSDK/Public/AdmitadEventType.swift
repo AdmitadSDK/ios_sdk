@@ -24,7 +24,7 @@ public enum AdmitadEventType {
     case registration(userId: String, channel: String?)
     case loyalty(userId: String, loyalty: Int, channel: String?)
     case returned(userId: String, dayReturned: Int, channel: String?)
-    case deviceinfo()
+    case deviceinfo
 }
 
 // MARK: - utility
@@ -86,7 +86,7 @@ private extension AdmitadEventType {
     }
     
     init(deviceinfoUrl url: URL) {
-        self = .deviceinfo()
+        self = .deviceinfo
     }
     
     init?(confirmedPurchaseUrl url: URL) {

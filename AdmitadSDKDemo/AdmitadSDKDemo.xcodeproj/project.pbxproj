@@ -299,7 +299,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AdmitadSDK/AdmitadSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
@@ -310,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ObjCDemoApp/Pods-ObjCDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48BD6845F5DE90EF3C7CF6E5 /* [CP] Embed Pods Frameworks */ = {
@@ -319,7 +319,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AdmitadSDK/AdmitadSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
@@ -330,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftDemoApp/Pods-SwiftDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52E62859147987A60251B78A /* [CP] Check Pods Manifest.lock */ = {
@@ -555,7 +555,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -572,7 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.admitadteam.DeeplinkSDKTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
