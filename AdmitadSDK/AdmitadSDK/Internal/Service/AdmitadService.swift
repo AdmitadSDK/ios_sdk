@@ -53,16 +53,14 @@ internal extension AdmitadService {
         storage.updateRequestStatus(request, status: .pending)
         AdmitadLogger.logRequestSent(request)
         
-        Alamofire.request(request.url)
-            .validate()
-            .responseJSON { responseJSON in
-                switch responseJSON.result {
-                case .success(let value):
-                    guard let jsonObject = value as? [String: Any] else { return }
-                    completion(jsonObject, nil)
-                case .failure(let error):
-                    completion(nil, AdmitadError(type: .unknown, requestError: error))
-                }
+        AF.request(request.url).validate().responseJSON { (responseJSON) in
+            switch responseJSON.result {
+            case .success(let value):
+                guard let jsonObject = value as? [String: Any] else { return }
+                completion(jsonObject, nil)
+            case .failure(let error):
+                completion(nil, AdmitadError(type: .unknown, requestError: error))
+            }
         }
     }
 }
@@ -130,7 +128,9 @@ private extension AdmitadService {
     // TODO: test actual implementation, move to sendRequest  
     func sendRequestAlamofireImplementation(request admitadRequest: AdmitadRequest,
                                                     completion: AdmitadCompletion?) {
-        request(admitadRequest.url).response {[weak self] (response) in
+        
+        AF.request(admitadRequest.url).response { [weak self] (response) in
+           
             guard let strongSelf = self else {
                 return
             }

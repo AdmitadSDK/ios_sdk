@@ -43,7 +43,7 @@ internal class AdmitadReachabilityManager {
 // MARK: - implementation
 internal extension AdmitadReachabilityManager {
     func startListening() {
-        manager?.listener = { [weak self] status in
+        manager?.startListening(onUpdatePerforming: { [weak self] (status) in
             guard let strongSelf = self else {
                 return
             }
@@ -61,8 +61,7 @@ internal extension AdmitadReachabilityManager {
                 strongSelf.reachability = .notReachable
                 self?.connectionType = .undefined
             }
-        }
-        manager?.startListening()
+        })
     }
 
     func stopListening() {
