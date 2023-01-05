@@ -92,20 +92,26 @@ private extension AdmitadRequestStorage {
         }
     }
 	
-	static var storedRequests: [AdmitadRequest] {
-		get {
-			if let restoredRequests = NSKeyedUnarchiver.unarchiveObject(withFile: archiveURL.path) as? [AdmitadRequest] {
-				return restoredRequests
-			} else {
-				return [AdmitadRequest]()
-			}
-		}
-		set {
-			let success = NSKeyedArchiver.archiveRootObject(newValue, toFile: archiveURL.path)
-			self.logSuccess(success)
-		}
-	}
-	
+    static var storedRequests: [AdmitadRequest] {
+        get {
+            do {
+                let data = try Data(contentsOf: archiveURL)
+                let restoredRequests = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, AdmitadRequest.self], from: data) as? [AdmitadRequest]
+                return restoredRequests ?? [AdmitadRequest]()
+            } catch {
+                return [AdmitadRequest]()
+            }
+        }
+        set {
+            do {
+                let dataToBeArchived = try NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true)
+                try dataToBeArchived.write(to: archiveURL)
+                self.logSuccess(true)
+            } catch {
+                self.logSuccess(false)
+            }
+        }
+    }
 }
 
 // MARK: - utility
